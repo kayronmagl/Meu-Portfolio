@@ -327,9 +327,10 @@ h1 {
 
   .contatos-titulo {
     font-size: 2rem;
-  }
-  
-  
+  } 
+}
+
+
   #manutencao {
     display: none;
     position: fixed;
@@ -393,7 +394,7 @@ h1 {
     transform: scale(1.05);
     background: linear-gradient(90deg, #c00, #900);
   }
-  
+
   
   @keyframes aparecerJanela {
     0% {
@@ -459,6 +460,4 @@ h1 {
     #fecharAviso {
       font-size: 0.9rem;
     }
-    
-  }
 }
