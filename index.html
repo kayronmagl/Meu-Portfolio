@@ -22,7 +22,7 @@
     </nav>
 
     <main id="inicio" class="cabecalho">
-        <img src="img/Foto de Perfil Portfolio.jpeg" alt="foto de Kayron" class="foto-perfil">
+        <img src="img/FotoDePerfilPortfolio.jpeg" alt="foto de Kayron" class="foto-perfil">
         <h1>Kayron Magalhães</h1>
         <p class="cabecalho-sub-titulo">T. Desenvolvimento de Sistemas</p>
     </main>
@@ -109,6 +109,36 @@
 
             window.open(url, '_blank');
         }
+    </script>
+
+
+    <div id="manutencao">
+        <div class="janela">
+            <h1>Aviso!</h1>
+            <p>Este Portfolio ainda irá receber novos projetos, ignore a seção de Projetos...</p>
+            <button id="fecharAviso">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            const aviso = document.getElementById('manutencao');
+            const janela = document.querySelector('.janela');
+            const botaoFechar = document.getElementById('fecharAviso');
+
+            aviso.style.display = 'flex';
+            aviso.classList.add('ativo');
+
+        botaoFechar.addEventListener('click', () => {
+            janela.classList.add('fechando');
+            aviso.classList.remove('ativo');
+            setTimeout(() => {
+                aviso.style.display = 'none';
+                janela.classList.remove('fechando');
+            }, 400);
+        });
+    });
+
     </script>
 
 </body>
