@@ -1,146 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <link rel="icon" type="image/png" href="img/LogoMarcaPessoal.png" sizes="96x96"/>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="img/LogoMarcaPessoal.png"
+      sizes="96x96"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio do Kayron Magalhães</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="particulas"></div>
 
     <nav class="navegacao">
-        <ul class="menu">
-            <li><a href="#inicio" class="menu-link">Inicio</a></li>
-            <li><a href="#sobre" class="menu-link">Sobre Mim</a></li>
-            <li><a href="#projetos" class="menu-link">Projetos</a></li>
-            <li><a href="#contatos" class="menu-link">Contato</a></li>
-        </ul>
+      <ul class="menu">
+        <li><a href="#inicio" class="menu-link">Inicio</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre Mim</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#contatos" class="menu-link">Contato</a></li>
+      </ul>
     </nav>
 
     <main id="inicio" class="cabecalho">
-        <img src="img/FotoDePerfilPortfolio.jpeg" alt="foto de Kayron" class="foto-perfil">
-        <h1>Kayron Magalhães</h1>
-        <p class="cabecalho-sub-titulo">T. Desenvolvimento de Sistemas</p>
+      <img
+        src="img/FotoDePerfilPortfolio.jpeg"
+        alt="foto de Kayron"
+        class="foto-perfil"
+      />
+      <h1>Kayron Magalhães</h1>
+      <p class="cabecalho-sub-titulo">
+        T. Desenvolvimento de Sistemas & Desenvolvedor Cloud
+      </p>
     </main>
 
     <section id="sobre" class="sobre">
-        <h2 class="sobre-titulo"> Sobre Mim</h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">
-                Olá! Meu nome é Kayron, tenho 18 anos e sou técnico em Desenvolvimento de Sistemas, Computação em Nuvem e
-                Inteligência Artificial, formado pelo SENAI e pelo IFCE. Tenho conhecimentos em HTML, CSS, JavaScript, Node.js, MySQL, 
-                UX, webservices, AWS, segurança da informação, machine learning, automação em nuvem, design thinking e inglês moderado, sigo sempre buscando criar soluções inteligentes, seguras e eficientes.
-
-            </p>
-        </div>
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Olá! Meu nome é Kayron, tenho 18 anos e sou técnico em Desenvolvimento
+          de Sistemas, Computação em Nuvem e Inteligência Artificial, formado
+          pelo SENAI e pelo IFCE. Tenho conhecimentos em HTML, CSS, JavaScript,
+          Node.js, MySQL, UX, webservices, AWS, segurança da informação, machine
+          learning, automação em nuvem, design thinking e inglês moderado, sigo
+          sempre buscando criar soluções inteligentes, seguras e eficientes.
+        </p>
+      </div>
     </section>
-
 
     <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
-        <div class="projetos-caixa">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img
+            src="img/Projeto-Cardapio.png"
+            alt="Screenshot Cardápio Digital Tobias Lanches"
+            class="projetos-imagem"
+          />
 
-            <div class="projetos-card">
-                <img src="img/projeto1.png" alt="projeto1" class="projetos-imagem">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Exemplo</h3>
-                    <p class="paragrafo-projetos">.</p>
-                </div>
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Cardápio Digital - Tobias Lanches</h3>
+            <p class="paragrafo-projetos">
+              Cardápio digital interativo e responsivo para um Quiosque Real e
+              Local, com frontend em HTML, CSS e JavaScript. Backend em Supabase
+              (PostgreSQL, Auth e realtime), com painel administrativo seguro
+              para gerenciamento dinâmico de produtos e pedidos. Deploy
+              realizado na Vercel.
+            </p>
+
+            <div class="botoes-projeto">
+              <a
+                href="https://cardapio-digital-tobias-lanches.vercel.app/"
+                class="botao-projeto"
+                target="_blank"
+                >Acessar Projeto →</a
+              >
             </div>
-
-
-            <div class="projetos-card">
-                <img src="img/projeto2.png" alt="projeto2" class="projetos-imagem">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Exemplo</h3>
-                    <p class="paragrafo-projetos">.</p>
-
-                </div>
-            </div>
-
-
-            <div class="projetos-card">
-                <img src="img/projeto3.png" alt="projeto3" class="projetos-imagem">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Exemplo</h3>
-                    <p class="paragrafo-projetos">.</p>
-                </div>
-            </div>
+          </div>
         </div>
 
+        <div class="projetos-card">
+          <img
+            src="img/projeto2.png"
+            alt="Screenshot Controle de Estoque"
+            class="projetos-imagem"
+          />
+
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Controle de Estoque Simples</h3>
+            <p class="paragrafo-projetos">Em desenvolvimento...</p>
+            <div class="botoes-projeto">
+              <a href="#" class="botao-projeto disabled" target="_blank"
+                >Em Desenvolvimento →</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img
+            src="img/projeto3.png"
+            alt="Screenshot Projeto 3"
+            class="projetos-imagem"
+          />
+
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Projeto 3</h3>
+            <p class="paragrafo-projetos">Em desenvolvimento...</p>
+            <div class="botoes-projeto">
+              <a href="#" class="botao-projeto disabled" target="_blank"
+                >Em Breve →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
     <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em Contato</h2>
+      <h2 class="contatos-titulo">Entre em Contato</h2>
 
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+      <form
+        class="formulario-contato"
+        id="formulario"
+        onsubmit="enviarWhats(event)"
+      >
         <div class="grupo-form">
-            <input placeholder="Nome" class="campo-form" id="nome">
+          <input placeholder="Nome" class="campo-form" id="nome" />
         </div>
 
         <div class="grupo-form">
-            <textarea class="campo-form" placeholder="Digite Sua Mensagem" rows="6" id="mensagem"></textarea>
+          <textarea
+            class="campo-form"
+            placeholder="Digite Sua Mensagem"
+            rows="6"
+            id="mensagem"
+          ></textarea>
         </div>
 
         <button type="submit" class="botao-form">Enviar Mensagem</button>
-
-        </form>
+      </form>
     </section>
 
     <script>
-        function enviarWhats(event) {
-            event.preventDefault();
+      function enviarWhats(event) {
+        event.preventDefault();
 
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5588982140888';
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5588982140888";
 
-            const texto = `Olá, Me chamo ${nome}, ${mensagem}`
-            const msgFormatada = encodeURIComponent(texto)
+        const texto = `Olá, Me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
 
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
 
-            console.log(url);
+        console.log(url);
 
-            window.open(url, '_blank');
-        }
+        window.open(url, "_blank");
+      }
     </script>
-
-
-    <div id="manutencao">
-        <div class="janela">
-            <h1>Aviso!</h1>
-            <p>Este Portfolio ainda irá receber novos projetos, ignore a seção de Projetos...</p>
-            <button id="fecharAviso">Fechar</button>
-        </div>
-    </div>
-
-    <script>
-        window.addEventListener('load', function () {
-            const aviso = document.getElementById('manutencao');
-            const janela = document.querySelector('.janela');
-            const botaoFechar = document.getElementById('fecharAviso');
-
-            aviso.style.display = 'flex';
-            aviso.classList.add('ativo');
-
-        botaoFechar.addEventListener('click', () => {
-            janela.classList.add('fechando');
-            aviso.classList.remove('ativo');
-            setTimeout(() => {
-                aviso.style.display = 'none';
-                janela.classList.remove('fechando');
-            }, 400);
-        });
-    });
-
-    </script>
-
-</body>
-
+  </body>
 </html>

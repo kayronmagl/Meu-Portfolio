@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -11,8 +11,8 @@ html {
 
 :root {
   --primaria: #3e5c76;
-  --secundaria: #748CAB;
-  --escuro: #0D1321;
+  --secundaria: #748cab;
+  --escuro: #0d1321;
   --maisEscuro: #0a0f1c;
   --claro: #f0ebd8;
   --vidro: rgba(255, 255, 255, 0.1);
@@ -50,7 +50,7 @@ body {
 }
 
 .menu-link::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 0;
   position: absolute;
@@ -91,7 +91,7 @@ h1 {
 }
 
 .cabecalho-sub-titulo {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: var(--claro);
 }
 
@@ -162,25 +162,51 @@ h1 {
 
 .paragrafo-projetos {
   color: rgba(226, 232, 240, 0.8);
-  line-height: 1.25rem;
-
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .caixa-textos-projeto {
   padding: 1.5rem;
 }
 
+.botoes-projeto {
+  margin-top: 1rem;
+}
+
+.botao-projeto {
+  display: inline-block;
+  color: var(--claro);
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--vidro);
+  min-width: 120px;
+  text-align: center;
+}
+
+.botao-projeto:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(62, 92, 118, 0.4);
+}
+
+.botao-projeto.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
 
 .info-projetos {
   margin-bottom: 5px;
-
 }
-
 
 .contatos {
   padding: 7rem 2rem 10rem;
 }
-
 
 .contatos-titulo {
   text-align: center;
@@ -197,7 +223,6 @@ h1 {
   border: 1px solid var(--vidro);
   border-radius: 16px;
 }
-
 
 .campo-form {
   width: 100%;
@@ -223,7 +248,6 @@ h1 {
 .grupo-form {
   margin-bottom: 1.5rem;
 }
-
 
 .botao-form {
   color: var(--claro);
@@ -256,11 +280,7 @@ h1 {
     var(--maisEscuro);
 }
 
-
-
-
 @keyframes flutuar {
-
   0%,
   100% {
     transform: translateY(0);
@@ -269,11 +289,9 @@ h1 {
   50% {
     transform: translateY(-20px);
   }
-
 }
 
 @media screen and (max-width: 768px) {
-
   .navegacao {
     padding: 1rem;
   }
@@ -327,137 +345,137 @@ h1 {
 
   .contatos-titulo {
     font-size: 2rem;
-  } 
+  }
 }
 
+#manutencao {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
-  #manutencao {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+#manutencao.ativo {
+  opacity: 1;
+}
+
+.janela {
+  background: rgba(39, 39, 39, 0.188);
+  border: 1px solid rgba(255, 255, 255, 0.149);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: scale(0.8);
+  opacity: 0;
+  animation: aparecerJanela 0.4s ease forwards;
+}
+
+.janela.fechando {
+  animation: fecharJanela 0.4s ease forwards;
+}
+
+#manutencao h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+#manutencao p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+#fecharAviso {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f00, #b30000);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+#fecharAviso:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #c00, #900);
+}
+
+@keyframes aparecerJanela {
+  0% {
     opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  
-  #manutencao.ativo {
-    opacity: 1;
-  }
-  
-  .janela {
-    background: rgba(39, 39, 39, 0.188);
-    border: 1px solid rgba(255, 255, 255, 0.149);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-    border-radius: 16px;
-    padding: 2rem 3rem;
-    text-align: center;
-    color: #fff;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     transform: scale(0.8);
-    opacity: 0;
-    animation: aparecerJanela 0.4s ease forwards;
   }
-  
-  .janela.fechando {
-    animation: fecharJanela 0.4s ease forwards;
-  }
-  
-  #manutencao h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  #manutencao p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+
+  100% {
     opacity: 1;
+    transform: scale(1);
   }
-  
+}
+
+@keyframes fecharJanela {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .janela {
+    width: 85%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  #manutencao h1 {
+    font-size: 1.6rem;
+  }
+
+  #manutencao p {
+    font-size: 1rem;
+  }
+
   #fecharAviso {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(90deg, #f00, #b30000);
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.2s ease, background 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 6px;
   }
-  
-  #fecharAviso:hover {
-    transform: scale(1.05);
-    background: linear-gradient(90deg, #c00, #900);
+}
+
+@media screen and (max-width: 480px) {
+  .janela {
+    width: 90%;
+    padding: 1.2rem;
   }
 
-  
-  @keyframes aparecerJanela {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes fecharJanela {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  
-    100% {
-      opacity: 0;
-      transform: scale(0.85);
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .janela {
-      width: 85%;
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-
-    #manutencao h1 {
-      font-size: 1.6rem;
-    }
-
-    #manutencao p {
-      font-size: 1rem;
-    }
-
-    #fecharAviso {
-      width: 100%;
-      font-size: 1rem;
-      padding: 0.8rem;
-      border-radius: 6px;
-    }
+  #manutencao h1 {
+    font-size: 1.4rem;
   }
 
-  @media screen and (max-width: 480px) {
-    .janela {
-      width: 90%;
-      padding: 1.2rem;
-    }
+  #manutencao p {
+    font-size: 0.9rem;
+  }
 
-    #manutencao h1 {
-      font-size: 1.4rem;
-    }
-
-    #manutencao p {
-      font-size: 0.9rem;
-    }
-
-    #fecharAviso {
-      font-size: 0.9rem;
-    }
+  #fecharAviso {
+    font-size: 0.9rem;
+  }
 }
