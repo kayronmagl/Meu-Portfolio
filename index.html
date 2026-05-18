@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <link
       rel="icon"
@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio do Kayron Magalhães</title>
+    <title>Portfólio de Kayron Magalhães</title>
   </head>
 
   <body>
     <div class="particulas"></div>
 
-    <nav class="navegacao">
+    <nav class="navegacao" aria-label="Navegação principal">
       <ul class="menu">
-        <li><a href="#inicio" class="menu-link">Inicio</a></li>
-        <li><a href="#sobre" class="menu-link">Sobre Mim</a></li>
+        <li><a href="#inicio" class="menu-link">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre mim</a></li>
         <li><a href="#projetos" class="menu-link">Projetos</a></li>
         <li><a href="#contatos" class="menu-link">Contato</a></li>
       </ul>
@@ -28,144 +28,360 @@
     <main id="inicio" class="cabecalho">
       <img
         src="img/FotoDePerfilPortfolio.jpeg"
-        alt="foto de Kayron"
+        alt="Foto de Kayron Magalhães"
         class="foto-perfil"
       />
       <h1>Kayron Magalhães</h1>
       <p class="cabecalho-sub-titulo">
-        T. Desenvolvimento de Sistemas & Desenvolvedor Cloud
+        Técnico em Desenvolvimento de Sistemas • Desenvolvedor Cloud
       </p>
     </main>
 
     <section id="sobre" class="sobre">
-      <h2 class="sobre-titulo">Sobre Mim</h2>
-      <div class="sobre-caixa">
-        <p class="sobre-paragrafo">
-          Desenvolvedor e técnico em Desenvolvimento de Sistemas, Computação em Nuvem e Inteligência Artificial, com formação pelo
-          SENAI e IFCE. Atuo na intersecção entre a criação de software e a arquitetura de infraestrutura, com foco em construir
-          aplicações que sejam, por definição, escaláveis e seguras.
+      <div class="secao-limite">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+          <p class="sobre-resumo">
+            Desenvolvedor com formação em Desenvolvimento de Sistemas, Computação
+            em Nuvem e Inteligência Artificial, com foco em construir aplicações
+            web escaláveis, seguras e utilizáveis em contexto real.
+          </p>
 
-          Meu conjunto de competências abrange desde o desenvolvimento Full Stack com Node.js e tecnologias Web (HTML, CSS,
-          JavaScript), até a automação de ambientes em nuvem via AWS. Integro conceitos de Segurança da Informação, Machine
-          Learning e Design Thinking para garantir que cada projeto resolva problemas reais com eficiência técnica e usabilidade.
+          <div class="sobre-topicos">
+            <article class="sobre-topico">
+              <h3>Desenvolvimento e arquitetura</h3>
+              <p>
+                Atuo da modelagem da interface ao desenho da estrutura técnica,
+                com experiência em HTML, CSS, JavaScript, Node.js e integração
+                entre frontend, regras de negócio e serviços externos.
+              </p>
+            </article>
 
-          Atualmente, foco em projetos que exigem integração de webservices, gerenciamento de bancos de dados MySQL e inteligência
-          de dados, buscando sempre a excelência na arquitetura de sistemas.
-        </p>
+            <article class="sobre-topico">
+              <h3>Cloud, dados e operação</h3>
+              <p>
+                Trabalho com cenários que exigem webservices, bancos de dados,
+                controle operacional e automação em nuvem, com atenção a
+                estabilidade, manutenção e segurança da informação.
+              </p>
+            </article>
+
+            <article class="sobre-topico">
+              <h3>Produto e execução técnica</h3>
+              <p>
+                Uso princípios de Design Thinking e análise de dados para
+                transformar requisitos em sistemas úteis, com responsividade,
+                clareza de fluxo e foco no problema real do usuário.
+              </p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="projetos" class="projetos">
-      <h2 class="projetos-titulo">Meus Projetos</h2>
-      <div class="projetos-caixa">
-        <div class="projetos-card">
-          <img
-            src="img/ImagemProjetoTLanches.png"
-            alt="Screenshot Cardápio Digital Tobias Lanches"
-            class="projetos-imagem"
-          />
+      <div class="secao-limite">
+        <h2 class="projetos-titulo">Projetos</h2>
+        <p class="projetos-intro">
+          Casos selecionados com foco em produto, implementação técnica e
+          evolução de sistemas para uso real.
+        </p>
 
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Cardápio Digital - Tobias Lanches</h3>
-            <p class="paragrafo-projetos">
-              Cardápio digital interativo e responsivo para um Quiosque Real e
-              Local, com frontend em HTML, CSS e JavaScript. Backend em Supabase
-              (PostgreSQL, Auth e realtime), com painel administrativo seguro
-              para gerenciamento dinâmico de produtos e pedidos. Deploy
-              realizado na Vercel.
-            </p>
+        <div class="projetos-caixa">
+          <article class="projetos-card" data-project-card>
+            <img
+              src="img/Loading.png"
+              alt="Prévia do Cardápio Digital 2.0"
+              class="projetos-imagem"
+            />
 
-            <div class="botoes-projeto">
-              <a
-                href="https://democardapio-digital-tobias-lanches.vercel.app/"
-                class="botao-projeto"
-                target="_blank"
-                >Acessar Projeto →</a
+            <div class="caixa-textos-projeto">
+              <div class="projeto-topo">
+                <span class="status-projeto status-projeto-atual">Atual</span>
+                <h3 class="info-projetos">Cardápio Digital 2.0</h3>
+              </div>
+
+              <p class="paragrafo-projetos">
+                Evolução técnica do cardápio digital, com interface mais madura,
+                painel Admin mais sólido e base preparada para operação online.
+              </p>
+
+              <ul class="stack-projeto" aria-label="Stack do projeto">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Supabase</li>
+                <li>Netlify</li>
+              </ul>
+
+              <div class="botoes-projeto">
+                <a
+                  href="https://democardapio.netlify.app/"
+                  class="botao-projeto"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Ver demo</a
+                >
+                <button
+                  type="button"
+                  class="botao-projeto botao-projeto-secundario"
+                  data-project-toggle
+                  aria-expanded="false"
+                  aria-controls="detalhes-projeto-v2"
+                >
+                  Ver detalhes
+                </button>
+              </div>
+
+              <div
+                id="detalhes-projeto-v2"
+                class="projeto-detalhes"
+                data-project-details
+                hidden
               >
+                <div class="projeto-detalhes-bloco">
+                  <h4>Foco técnico</h4>
+                  <p>
+                    Reorganização da base do sistema para catálogo público,
+                    carrinho, checkout e gerenciamento administrativo em uma
+                    estrutura mais estável para manutenção e evolução.
+                  </p>
+                </div>
+
+                <div class="projeto-detalhes-bloco">
+                  <h4>Principais entregas</h4>
+                  <ul class="projeto-detalhes-lista">
+                    <li>Painel Admin para produtos, categorias, adicionais e configurações.</li>
+                    <li>Melhor consistência de interface em desktop e mobile.</li>
+                    <li>Preparação para operação online com Supabase.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="projetos-card">
-          <img
-            src="img/Loading.png"
-            alt="Screenshot Controle de Estoque"
-            class="projetos-imagem"
-          />
+          <article class="projetos-card" data-project-card>
+            <img
+              src="img/ImagemProjetoTLanches.png"
+              alt="Prévia da primeira versão do Cardápio Digital"
+              class="projetos-imagem"
+            />
 
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Controle de Estoque Simples</h3>
-            <p class="paragrafo-projetos">Em desenvolvimento...</p>
-            <div class="botoes-projeto">
-              <a href="#" class="botao-projeto disabled" target="_blank"
-                >Em Desenvolvimento →</a
+            <div class="caixa-textos-projeto">
+              <div class="projeto-topo">
+                <span class="status-projeto status-projeto-base">Versão inicial</span>
+                <h3 class="info-projetos">Cardápio Digital - versão inicial</h3>
+              </div>
+
+              <p class="paragrafo-projetos">
+                Primeira base funcional do produto, criada para organizar pedidos
+                por WhatsApp com uma experiência mais clara para catálogo,
+                seleção e envio.
+              </p>
+
+              <ul class="stack-projeto" aria-label="Stack do projeto">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>WhatsApp</li>
+                <li>UI responsiva</li>
+              </ul>
+
+              <div class="botoes-projeto">
+                <a
+                  href="https://democardapio-digital-tobias-lanches.vercel.app/"
+                  class="botao-projeto"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Ver demo</a
+                >
+                <button
+                  type="button"
+                  class="botao-projeto botao-projeto-secundario"
+                  data-project-toggle
+                  aria-expanded="false"
+                  aria-controls="detalhes-projeto-base"
+                >
+                  Ver detalhes
+                </button>
+              </div>
+
+              <div
+                id="detalhes-projeto-base"
+                class="projeto-detalhes"
+                data-project-details
+                hidden
               >
+                <div class="projeto-detalhes-bloco">
+                  <h4>Foco técnico</h4>
+                  <p>
+                    Construção da primeira versão do fluxo público de pedidos,
+                    com catálogo interativo, carrinho e handoff para WhatsApp
+                    sem depender de um app nativo.
+                  </p>
+                </div>
+
+                <div class="projeto-detalhes-bloco">
+                  <h4>Principais entregas</h4>
+                  <ul class="projeto-detalhes-lista">
+                    <li>Estrutura inicial de catálogo responsivo para um quiosque real.</li>
+                    <li>Fluxo de pedido orientado a simplicidade e velocidade.</li>
+                    <li>Base que originou a evolução para a versão 2.0.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="projetos-card">
-          <img
-            src="img/Loading.png"
-            alt="Screenshot Loading"
-            class="projetos-imagem"
-          />
+          <article class="projetos-card" data-project-card>
+            <img
+              src="img/Loading.png"
+              alt="Prévia do próximo case técnico"
+              class="projetos-imagem"
+            />
 
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Em Breve</h3>
-            <p class="paragrafo-projetos">Em desenvolvimento...</p>
-            <div class="botoes-projeto">
-              <a href="#" class="botao-projeto disabled" target="_blank"
-                >Em Breve →</a
+            <div class="caixa-textos-projeto">
+              <div class="projeto-topo">
+                <span class="status-projeto status-projeto-futuro">Em breve</span>
+                <h3 class="info-projetos">Próximo case técnico</h3>
+              </div>
+
+              <p class="paragrafo-projetos">
+                Espaço reservado para o próximo projeto com publicação técnica,
+                demonstração própria e documentação mais detalhada do processo
+                de implementação.
+              </p>
+
+              <ul class="stack-projeto" aria-label="Tipo de projeto">
+                <li>Case aplicado</li>
+                <li>Backend</li>
+                <li>Dados</li>
+                <li>Operação real</li>
+              </ul>
+
+              <div class="botoes-projeto">
+                <span class="botao-projeto disabled" aria-disabled="true"
+                  >Ver demo</span
+                >
+                <button
+                  type="button"
+                  class="botao-projeto botao-projeto-secundario"
+                  data-project-toggle
+                  aria-expanded="false"
+                  aria-controls="detalhes-projeto-futuro"
+                >
+                  Ver detalhes
+                </button>
+              </div>
+
+              <div
+                id="detalhes-projeto-futuro"
+                class="projeto-detalhes"
+                data-project-details
+                hidden
               >
+                <div class="projeto-detalhes-bloco">
+                  <h4>Direção do próximo projeto</h4>
+                  <p>
+                    O próximo card será usado para um novo case com escopo
+                    técnico fechado, publicação pública e recorte claro de
+                    arquitetura, operação e resultado.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contatos" class="contatos">
-      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <div class="secao-limite">
+        <h2 class="contatos-titulo">Entre em contato</h2>
 
-      <form
-        class="formulario-contato"
-        id="formulario"
-        onsubmit="enviarWhats(event)"
-      >
-        <div class="grupo-form">
-          <input placeholder="Nome" class="campo-form" id="nome" />
-        </div>
+        <form
+          class="formulario-contato"
+          id="formulario"
+          onsubmit="enviarWhats(event)"
+        >
+          <div class="grupo-form">
+            <input placeholder="Nome" class="campo-form" id="nome" required />
+          </div>
 
-        <div class="grupo-form">
-          <textarea
-            class="campo-form"
-            placeholder="Digite Sua Mensagem"
-            rows="6"
-            id="mensagem"
-          ></textarea>
-        </div>
+          <div class="grupo-form">
+            <textarea
+              class="campo-form"
+              placeholder="Digite sua mensagem"
+              rows="6"
+              id="mensagem"
+              required
+            ></textarea>
+          </div>
 
-        <button type="submit" class="botao-form">Enviar Mensagem</button>
-      </form>
+          <button type="submit" class="botao-form">Enviar mensagem</button>
+        </form>
+      </div>
     </section>
 
     <script>
       function enviarWhats(event) {
         event.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const mensagem = document.getElementById("mensagem").value;
+        const nome = document.getElementById("nome").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
         const telefone = "5588982140888";
 
-        const texto = `Olá, Me chamo ${nome}, ${mensagem}`;
+        if (!nome || !mensagem) {
+          return;
+        }
+
+        const texto = `Olá, me chamo ${nome}. ${mensagem}`;
         const msgFormatada = encodeURIComponent(texto);
-
         const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
-        console.log(url);
 
         window.open(url, "_blank");
       }
+
+      const projectToggleButtons = Array.from(
+        document.querySelectorAll("[data-project-toggle]")
+      );
+
+      function setProjectDetailsState(button, expanded) {
+        const panelId = button.getAttribute("aria-controls");
+        const panel = document.getElementById(panelId);
+        const card = button.closest("[data-project-card]");
+
+        if (!panel || !card) {
+          return;
+        }
+
+        button.setAttribute("aria-expanded", String(expanded));
+        button.textContent = expanded ? "Ocultar detalhes" : "Ver detalhes";
+        panel.hidden = !expanded;
+        card.classList.toggle("projetos-card--expanded", expanded);
+      }
+
+      function closeOtherProjectDetails(activeButton) {
+        projectToggleButtons.forEach((button) => {
+          if (button !== activeButton) {
+            setProjectDetailsState(button, false);
+          }
+        });
+      }
+
+      projectToggleButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+          if (isExpanded) {
+            setProjectDetailsState(button, false);
+            return;
+          }
+
+          closeOtherProjectDetails(button);
+          setProjectDetailsState(button, true);
+        });
+      });
     </script>
   </body>
 </html>
