@@ -301,6 +301,10 @@
     </section>
 
     <script>
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+
       const menuLinks = Array.from(document.querySelectorAll(".menu-link"));
       const menuSections = menuLinks
         .map((link) => document.querySelector(link.getAttribute("href")))
@@ -308,7 +312,7 @@
 
       function getNavigationOffset() {
         const nav = document.querySelector(".navegacao");
-        return nav ? nav.getBoundingClientRect().height + 18 : 0;
+        return nav ? nav.getBoundingClientRect().height + 8 : 0;
       }
 
       function setActiveMenuLink(activeId) {
@@ -323,6 +327,22 @@
           }
         });
       }
+
+      function resetInitialViewToTop() {
+        if (window.location.hash) {
+          return;
+        }
+
+        window.scrollTo(0, 0);
+        setActiveMenuLink("inicio");
+      }
+
+      window.addEventListener("load", resetInitialViewToTop);
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) {
+          resetInitialViewToTop();
+        }
+      });
 
       menuLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
