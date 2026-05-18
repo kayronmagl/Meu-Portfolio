@@ -312,7 +312,17 @@
 
       function getNavigationOffset() {
         const nav = document.querySelector(".navegacao");
-        return nav ? nav.getBoundingClientRect().height + 8 : 0;
+        return nav ? nav.getBoundingClientRect().height + 14 : 0;
+      }
+
+      function getNavigationTarget(target) {
+        if (!target || target.id === "inicio") {
+          return target;
+        }
+
+        return (
+          target.querySelector(".sobre-titulo, .projetos-titulo") || target
+        );
       }
 
       function setActiveMenuLink(activeId) {
@@ -355,8 +365,9 @@
 
           event.preventDefault();
 
+          const navigationTarget = getNavigationTarget(target);
           const top =
-            target.getBoundingClientRect().top +
+            navigationTarget.getBoundingClientRect().top +
             window.scrollY -
             getNavigationOffset();
 
