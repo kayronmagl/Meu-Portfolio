@@ -21,7 +21,6 @@
         <li><a href="#inicio" class="menu-link">Início</a></li>
         <li><a href="#sobre" class="menu-link">Sobre mim</a></li>
         <li><a href="#projetos" class="menu-link">Projetos</a></li>
-        <li><a href="#contatos" class="menu-link">Contato</a></li>
       </ul>
     </nav>
 
@@ -42,9 +41,15 @@
         <h2 class="sobre-titulo">Sobre mim</h2>
         <div class="sobre-caixa">
           <p class="sobre-resumo">
-            Desenvolvedor com formação em Desenvolvimento de Sistemas, Computação
-            em Nuvem e Inteligência Artificial, com foco em construir aplicações
-            web escaláveis, seguras e utilizáveis em contexto real.
+            Olá! Meu nome é Kayron, tenho 18 anos e sou técnico em
+            Desenvolvimento de Sistemas, Computação em Nuvem e Inteligência
+            Artificial, formado pelo SENAI e pelo IFCE. Tenho conhecimentos em
+            HTML, CSS, JavaScript, Node.js, MySQL, UX, webservices, AWS,
+            segurança da informação, machine learning, automação em nuvem,
+            design thinking e inglês moderado. Gosto de desenvolver aplicações
+            web, estruturar interfaces, integrar serviços e organizar a base
+            técnica dos projetos para que tudo funcione bem na prática, com
+            clareza de uso, segurança e espaço para evoluir.
           </p>
 
           <div class="sobre-topicos">
@@ -295,51 +300,74 @@
       </div>
     </section>
 
-    <section id="contatos" class="contatos">
-      <div class="secao-limite">
-        <h2 class="contatos-titulo">Entre em contato</h2>
-
-        <form
-          class="formulario-contato"
-          id="formulario"
-          onsubmit="enviarWhats(event)"
-        >
-          <div class="grupo-form">
-            <input placeholder="Nome" class="campo-form" id="nome" required />
-          </div>
-
-          <div class="grupo-form">
-            <textarea
-              class="campo-form"
-              placeholder="Digite sua mensagem"
-              rows="6"
-              id="mensagem"
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" class="botao-form">Enviar mensagem</button>
-        </form>
-      </div>
-    </section>
-
     <script>
-      function enviarWhats(event) {
-        event.preventDefault();
+      const menuLinks = Array.from(document.querySelectorAll(".menu-link"));
+      const menuSections = menuLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
 
-        const nome = document.getElementById("nome").value.trim();
-        const mensagem = document.getElementById("mensagem").value.trim();
-        const telefone = "5588982140888";
+      function getNavigationOffset() {
+        const nav = document.querySelector(".navegacao");
+        return nav ? nav.getBoundingClientRect().height + 18 : 0;
+      }
 
-        if (!nome || !mensagem) {
-          return;
-        }
+      function setActiveMenuLink(activeId) {
+        menuLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
 
-        const texto = `Olá, me chamo ${nome}. ${mensagem}`;
-        const msgFormatada = encodeURIComponent(texto);
-        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+          if (isActive) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
 
-        window.open(url, "_blank");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetSelector = link.getAttribute("href");
+          const target = document.querySelector(targetSelector);
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+
+          const top =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            getNavigationOffset();
+
+          window.scrollTo({
+            top: Math.max(0, top),
+            behavior: "smooth",
+          });
+
+          setActiveMenuLink(target.id);
+        });
+      });
+
+      if (menuSections.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+            if (visible?.target?.id) {
+              setActiveMenuLink(visible.target.id);
+            }
+          },
+          {
+            rootMargin: "-30% 0px -45% 0px",
+            threshold: [0.2, 0.35, 0.55],
+          }
+        );
+
+        menuSections.forEach((section) => observer.observe(section));
+        setActiveMenuLink(menuSections[0].id);
       }
 
       const projectToggleButtons = Array.from(
