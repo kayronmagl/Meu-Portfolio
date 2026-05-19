@@ -272,23 +272,8 @@ h1 {
 .sobre-titulo {
   max-width: 42rem;
   margin: 0 auto 0.72rem;
-  display: flex;
-  align-items: center;
-  gap: 0.82rem;
   padding-left: 0.1rem;
   text-align: left;
-}
-
-.sobre-titulo::after {
-  content: "";
-  flex: 1 1 auto;
-  max-width: 7.5rem;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(216, 210, 200, 0.34),
-    rgba(216, 210, 200, 0)
-  );
 }
 
 .projetos-titulo {
@@ -825,10 +810,6 @@ h1 {
 @media screen and (max-width: 767px) {
   .sobre-titulo {
     margin-bottom: 0.82rem;
-  }
-
-  .sobre-titulo::after {
-    max-width: 5.2rem;
   }
 
   .navegacao {
