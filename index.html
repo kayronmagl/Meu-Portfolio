@@ -108,7 +108,7 @@
                   class="botao-projeto"
                   target="_blank"
                   rel="noreferrer"
-                  >Ver demo</a
+                  >Ver projeto</a
                 >
                 <button
                   type="button"
@@ -181,7 +181,7 @@
                   class="botao-projeto"
                   target="_blank"
                   rel="noreferrer"
-                  >Ver demo</a
+                  >Ver projeto</a
                 >
                 <button
                   type="button"
@@ -224,14 +224,14 @@
           <article class="projetos-card" data-project-card>
             <img
               src="img/Loading.png"
-              alt="Prévia do próximo case técnico"
+              alt="Prévia do próximo projeto"
               class="projetos-imagem"
             />
 
             <div class="caixa-textos-projeto">
               <div class="projeto-topo">
                 <span class="status-projeto status-projeto-futuro">Em breve</span>
-                <h3 class="info-projetos">Próximo case técnico</h3>
+                <h3 class="info-projetos">Próximo projeto</h3>
               </div>
 
               <p class="paragrafo-projetos">
@@ -249,7 +249,7 @@
 
               <div class="botoes-projeto">
                 <span class="botao-projeto disabled" aria-disabled="true"
-                  >Ver demo</span
+                  >Ver projeto</span
                 >
                 <button
                   type="button"
@@ -269,11 +269,11 @@
                 hidden
               >
                 <div class="projeto-detalhes-bloco">
-                  <h4>O que vem no próximo case</h4>
+                  <h4>O que ainda vem</h4>
                   <p>
                     A ideia é usar esse próximo espaço para mostrar um novo
-                    case do começo ao fim, com problema bem definido, solução
-                    publicada e decisões técnicas mais visíveis.
+                    projeto do começo ao fim, com problema bem definido, solução
+                    publicada e decisões mais visíveis.
                   </p>
                 </div>
               </div>
@@ -284,47 +284,99 @@
     </section>
 
     <script>
+      document.body.classList.add("js-ready");
+
       if ("scrollRestoration" in window.history) {
         window.history.scrollRestoration = "manual";
       }
 
-      const menuLinks = Array.from(document.querySelectorAll(".menu-link"));
-      const menuSections = menuLinks
+      const linksMenu = Array.from(document.querySelectorAll(".menu-link"));
+      const secoesMenu = linksMenu
         .map((link) => document.querySelector(link.getAttribute("href")))
         .filter(Boolean);
-      let activeMenuLockId = null;
-      let activeMenuLockUntil = 0;
+      const atrasosCorrecaoNavegacao = [260, 520, 880];
+      let idMenuTravado = null;
+      let menuTravadoAte = 0;
+      let temporizadoresCorrecao = [];
 
-      function getNavigationOffset() {
+      function obterOffsetNavegacao() {
         const menu = document.querySelector(".menu");
-        const nav = document.querySelector(".navegacao");
-        const extraGap = window.matchMedia("(max-width: 767px)").matches
+        const navegacao = document.querySelector(".navegacao");
+        const folgaExtra = window.matchMedia("(max-width: 767px)").matches
           ? 4
           : 5;
 
         if (menu) {
-          return menu.getBoundingClientRect().bottom + extraGap;
+          return menu.getBoundingClientRect().bottom + folgaExtra;
         }
 
-        return nav ? nav.getBoundingClientRect().height + extraGap : 0;
+        return navegacao
+          ? navegacao.getBoundingClientRect().height + folgaExtra
+          : 0;
       }
 
-      function getNavigationTarget(target) {
-        if (!target || target.id === "inicio") {
-          return target;
+      function obterAlvoNavegacao(secao) {
+        if (!secao || secao.id === "inicio") {
+          return secao;
         }
 
-        return (
-          target.querySelector(".sobre-titulo, .projetos-titulo") || target
+        return secao.querySelector(".sobre-titulo, .projetos-titulo") || secao;
+      }
+
+      function limparCorrecoesNavegacao() {
+        temporizadoresCorrecao.forEach((temporizador) =>
+          clearTimeout(temporizador)
+        );
+        temporizadoresCorrecao = [];
+      }
+
+      function obterDestinoNavegacao(secao) {
+        const alvoNavegacao = obterAlvoNavegacao(secao);
+
+        return Math.max(
+          0,
+          alvoNavegacao.getBoundingClientRect().top +
+            window.scrollY -
+            obterOffsetNavegacao()
         );
       }
 
-      function setActiveMenuLink(activeId) {
-        menuLinks.forEach((link) => {
-          const isActive = link.getAttribute("href") === `#${activeId}`;
-          link.classList.toggle("is-active", isActive);
+      // Recalcula o alvo apos o clique para cobrir pequenas mudancas de viewport no mobile.
+      function corrigirPosicaoNavegacao(secao) {
+        if (!secao || idMenuTravado !== secao.id) {
+          return;
+        }
 
-          if (isActive) {
+        const diferenca =
+          obterAlvoNavegacao(secao).getBoundingClientRect().top -
+          obterOffsetNavegacao();
+
+        if (Math.abs(diferenca) > 1) {
+          window.scrollBy({
+            top: diferenca,
+            behavior: "auto",
+          });
+        }
+      }
+
+      function agendarCorrecoesNavegacao(secao) {
+        limparCorrecoesNavegacao();
+
+        atrasosCorrecaoNavegacao.forEach((atraso) => {
+          const temporizador = window.setTimeout(() => {
+            corrigirPosicaoNavegacao(secao);
+          }, atraso);
+
+          temporizadoresCorrecao.push(temporizador);
+        });
+      }
+
+      function marcarLinkAtivo(idAtivo) {
+        linksMenu.forEach((link) => {
+          const estaAtivo = link.getAttribute("href") === `#${idAtivo}`;
+          link.classList.toggle("is-active", estaAtivo);
+
+          if (estaAtivo) {
             link.setAttribute("aria-current", "page");
           } else {
             link.removeAttribute("aria-current");
@@ -332,137 +384,141 @@
         });
       }
 
-      function resetInitialViewToTop() {
+      function resetarVisaoInicial() {
         if (window.location.hash) {
           return;
         }
 
         window.scrollTo(0, 0);
-        setActiveMenuLink("inicio");
+        marcarLinkAtivo("inicio");
       }
 
-      resetInitialViewToTop();
+      resetarVisaoInicial();
       window.addEventListener("pageshow", (event) => {
         if (event.persisted) {
-          resetInitialViewToTop();
+          resetarVisaoInicial();
         }
       });
 
-      menuLinks.forEach((link) => {
+      linksMenu.forEach((link) => {
         link.addEventListener("click", (event) => {
-          const targetSelector = link.getAttribute("href");
-          const target = document.querySelector(targetSelector);
+          const seletorAlvo = link.getAttribute("href");
+          const secaoAlvo = document.querySelector(seletorAlvo);
 
-          if (!target) {
+          if (!secaoAlvo) {
             return;
           }
 
           event.preventDefault();
 
-          const navigationTarget = getNavigationTarget(target);
-          const top =
-            navigationTarget.getBoundingClientRect().top +
-            window.scrollY -
-            getNavigationOffset();
+          const destino = obterDestinoNavegacao(secaoAlvo);
 
-          activeMenuLockId = target.id;
-          activeMenuLockUntil = performance.now() + 900;
+          idMenuTravado = secaoAlvo.id;
+          menuTravadoAte = performance.now() + 900;
 
           window.scrollTo({
-            top: Math.max(0, top),
+            top: destino,
             behavior: "smooth",
           });
 
-          setActiveMenuLink(target.id);
+          agendarCorrecoesNavegacao(secaoAlvo);
+          marcarLinkAtivo(secaoAlvo.id);
         });
       });
 
-      if (menuSections.length) {
-        let menuSyncTicking = false;
+      if (secoesMenu.length) {
+        let sincronizacaoPendente = false;
 
-        function getScrollDrivenActiveSectionId() {
-          const offset = getNavigationOffset() + 18;
-          const entries = menuSections.map((section) => ({
-            id: section.id,
-            top: getNavigationTarget(section).getBoundingClientRect().top,
+        function obterIdAtivoPorScroll() {
+          const offset = obterOffsetNavegacao() + 18;
+          const posicoes = secoesMenu.map((secao) => ({
+            id: secao.id,
+            top: obterAlvoNavegacao(secao).getBoundingClientRect().top,
           }));
-          const reachedSections = entries.filter((entry) => entry.top <= offset);
+          const secoesAtingidas = posicoes.filter(
+            (posicao) => posicao.top <= offset
+          );
 
-          if (reachedSections.length) {
-            return reachedSections.sort((a, b) => b.top - a.top)[0].id;
+          if (secoesAtingidas.length) {
+            return secoesAtingidas.sort((a, b) => b.top - a.top)[0].id;
           }
 
-          return entries.sort((a, b) => a.top - b.top)[0]?.id ?? menuSections[0].id;
+          return (
+            posicoes.sort((a, b) => a.top - b.top)[0]?.id ?? secoesMenu[0].id
+          );
         }
 
-        function syncActiveMenuLink() {
-          menuSyncTicking = false;
+        function sincronizarLinkAtivo() {
+          sincronizacaoPendente = false;
 
-          if (activeMenuLockId && performance.now() < activeMenuLockUntil) {
-            setActiveMenuLink(activeMenuLockId);
+          if (idMenuTravado && performance.now() < menuTravadoAte) {
+            marcarLinkAtivo(idMenuTravado);
             return;
           }
 
-          activeMenuLockId = null;
-          const activeId = getScrollDrivenActiveSectionId();
+          idMenuTravado = null;
+          const idAtivo = obterIdAtivoPorScroll();
 
-          if (activeId) {
-            setActiveMenuLink(activeId);
+          if (idAtivo) {
+            marcarLinkAtivo(idAtivo);
           }
         }
 
-        function requestMenuSync() {
-          if (menuSyncTicking) {
+        function pedirSincronizacaoMenu() {
+          if (sincronizacaoPendente) {
             return;
           }
 
-          menuSyncTicking = true;
-          window.requestAnimationFrame(syncActiveMenuLink);
+          sincronizacaoPendente = true;
+          window.requestAnimationFrame(sincronizarLinkAtivo);
         }
 
-        window.addEventListener("scroll", requestMenuSync, { passive: true });
-        window.addEventListener("resize", requestMenuSync);
-        requestMenuSync();
+        window.addEventListener("scroll", pedirSincronizacaoMenu, {
+          passive: true,
+        });
+        window.addEventListener("resize", pedirSincronizacaoMenu);
+        pedirSincronizacaoMenu();
       }
 
-      const projectToggleButtons = Array.from(
+      const botoesDetalhesProjeto = Array.from(
         document.querySelectorAll("[data-project-toggle]")
       );
 
-      function setProjectDetailsState(button, expanded) {
-        const panelId = button.getAttribute("aria-controls");
-        const panel = document.getElementById(panelId);
-        const card = button.closest("[data-project-card]");
+      function definirEstadoDetalhesProjeto(botao, expandido) {
+        const idPainel = botao.getAttribute("aria-controls");
+        const painel = document.getElementById(idPainel);
+        const card = botao.closest("[data-project-card]");
 
-        if (!panel || !card) {
+        if (!painel || !card) {
           return;
         }
 
-        button.setAttribute("aria-expanded", String(expanded));
-        button.textContent = expanded ? "Ocultar detalhes" : "Ver detalhes";
-        panel.hidden = !expanded;
-        card.classList.toggle("projetos-card--expanded", expanded);
+        botao.setAttribute("aria-expanded", String(expandido));
+        botao.textContent = expandido ? "Ocultar detalhes" : "Ver detalhes";
+        painel.hidden = !expandido;
+        card.classList.toggle("projetos-card--expanded", expandido);
       }
 
-      function closeOtherProjectDetails(activeButton) {
-        projectToggleButtons.forEach((button) => {
-          if (button !== activeButton) {
-            setProjectDetailsState(button, false);
+      function fecharOutrosDetalhesProjeto(botaoAtivo) {
+        botoesDetalhesProjeto.forEach((botao) => {
+          if (botao !== botaoAtivo) {
+            definirEstadoDetalhesProjeto(botao, false);
           }
         });
       }
 
-      projectToggleButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const isExpanded = button.getAttribute("aria-expanded") === "true";
+      botoesDetalhesProjeto.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          const estaExpandido =
+            botao.getAttribute("aria-expanded") === "true";
 
-          if (isExpanded) {
-            setProjectDetailsState(button, false);
+          if (estaExpandido) {
+            definirEstadoDetalhesProjeto(botao, false);
             return;
           }
 
-          closeOtherProjectDetails(button);
-          setProjectDetailsState(button, true);
+          fecharOutrosDetalhesProjeto(botao);
+          definirEstadoDetalhesProjeto(botao, true);
         });
       });
     </script>
