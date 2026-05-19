@@ -26,9 +26,9 @@
 
     <main id="inicio" class="cabecalho">
       <img
-        src="img/FotoDePerfilPortfolio.jpeg"
-        alt="Foto de Kayron Magalhães"
-        class="foto-perfil"
+        src="img/LogoMarcaPessoal.png"
+        alt="Logo de Kayron Magalhães"
+        class="logo-pessoal"
       />
       <h1>Kayron Magalhães</h1>
       <p class="cabecalho-sub-titulo">
@@ -104,7 +104,7 @@
 
               <div class="botoes-projeto">
                 <a
-                  href="https://democardapio.netlify.app/"
+                  href="https://cardapio-digital-tobias-lanches-v2-0.vercel.app/"
                   class="botao-projeto"
                   target="_blank"
                   rel="noreferrer"
@@ -296,8 +296,17 @@
       let activeMenuLockUntil = 0;
 
       function getNavigationOffset() {
+        const menu = document.querySelector(".menu");
         const nav = document.querySelector(".navegacao");
-        return nav ? nav.getBoundingClientRect().height + 14 : 0;
+        const extraGap = window.matchMedia("(max-width: 767px)").matches
+          ? 4
+          : 5;
+
+        if (menu) {
+          return menu.getBoundingClientRect().bottom + extraGap;
+        }
+
+        return nav ? nav.getBoundingClientRect().height + extraGap : 0;
       }
 
       function getNavigationTarget(target) {
@@ -332,7 +341,7 @@
         setActiveMenuLink("inicio");
       }
 
-      window.addEventListener("load", resetInitialViewToTop);
+      resetInitialViewToTop();
       window.addEventListener("pageshow", (event) => {
         if (event.persisted) {
           resetInitialViewToTop();
