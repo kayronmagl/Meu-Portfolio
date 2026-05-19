@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
   <head>
     <link
@@ -18,22 +18,46 @@
 
     <nav class="navegacao" aria-label="Navegação principal">
       <ul class="menu">
-        <li><a href="#inicio" class="menu-link">Início</a></li>
-        <li><a href="#sobre" class="menu-link">Sobre mim</a></li>
-        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#inicio" class="menu-atalho">Início</a></li>
+        <li><a href="#sobre" class="menu-atalho">Sobre mim</a></li>
+        <li><a href="#projetos" class="menu-atalho">Projetos</a></li>
       </ul>
     </nav>
 
     <main id="inicio" class="cabecalho">
-      <img
-        src="img/LogoMarcaPessoal.png"
-        alt="Logo de Kayron Magalhães"
-        class="logo-pessoal"
-      />
-      <h1>Kayron Magalhães</h1>
-      <p class="cabecalho-sub-titulo">
-        Técnico em Desenvolvimento de Sistemas & Desenvolvedor Cloud
-      </p>
+      <div class="cabecalho-painel">
+        <img
+          src="img/LogoMarcaPessoal.png"
+          alt="Logo de Kayron Magalhães"
+          class="logo-pessoal"
+        />
+        <h1>Kayron Magalhães</h1>
+        <p class="cabecalho-sub-titulo">
+          Construo experiências web, interfaces claras e sistemas pensados
+          para uso real.
+        </p>
+        <div class="cabecalho-acoes" aria-label="Link principal">
+          <a
+            href="https://linktr.ee/kaka.dev"
+            class="cabecalho-acao-linktree"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir Linktree de Kayron Magalhães"
+            title="Linktree"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              class="cabecalho-acao-icone"
+            >
+              <path
+                fill="currentColor"
+                d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.89h1.294v4.776c0 .486-.404.89-.89.89H6.577a.898.898 0 0 1-.889-.891v-4.774H.992c-.728 0-1.214-.729-.89-1.377l6.96-12.627a1.065 1.065 0 0 1 1.863 0l2.913 5.585-3.885 7.042zm15.945 0l-6.96-12.627a1.065 1.065 0 0 0-1.862 0l-2.995 5.586 3.885 7.04c.081.164.081.326.081.487-.08.517-.529.897-1.052.89h-1.296v4.776c.005.49.4.887.89.89h2.914a.9.9 0 0 0 .892-.89v-4.775h4.612c.73 0 1.214-.729.89-1.377Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
     </main>
 
     <section id="sobre" class="sobre">
@@ -41,18 +65,20 @@
         <h2 class="sobre-titulo">Sobre mim</h2>
         <div class="sobre-caixa">
           <div class="sobre-biografia">
-            <p class="sobre-lead">
-              Olá! Meu nome é Kayron, tenho 18 anos e sou técnico em
-              Desenvolvimento de Sistemas (Senai) e Computação em Nuvem (IFCE),
-              com base também em Inteligência Artificial.
+            <p class="sobre-abertura">
+              Olá! Meu nome é Kayron, tenho 18 anos e sou
+              técnico em Desenvolvimento de Sistemas (Senai) e
+              Computação em Nuvem (IFCE), com base também em
+              Inteligência Artificial.
             </p>
             <p class="sobre-corpo">
-              Tenho base em desenvolvimento web, cloud, dados, UX, segurança da
-              informação e automação, e gosto de transformar esse repertório em
-              soluções que façam sentido no uso real. Meu foco é construir
+              Tenho base em desenvolvimento web, cloud, dados, UX,
+              segurança da informação e automação,
+              e gosto de transformar esse repertório em soluções
+              que funcionem bem na prática. Meu foco é construir
               aplicações com interface clara, estrutura organizada e
-              comportamento confiável, pensando tanto na experiência de quem
-              usa quanto na manutenção de quem opera o sistema.
+              comportamento confiável, pensando tanto em quem usa quanto em
+              quem precisa manter o sistema evoluindo.
             </p>
           </div>
         </div>
@@ -62,37 +88,60 @@
     <section id="projetos" class="projetos">
       <div class="secao-limite">
         <h2 class="projetos-titulo">Projetos</h2>
-        <p class="projetos-intro">
-          Projetos pensados para uso real, com atenção à experiência, à
-          estrutura do sistema e à evolução de cada solução.
+        <p class="projetos-abertura">
+          Projetos pensados para uso real, com atenção à
+          experiência, à estrutura do sistema e à
+          evolução de cada solução.
         </p>
 
         <div class="projetos-caixa">
-          <article class="projetos-card" data-project-card>
-            <img
-              src="img/Loading.png"
-              alt="Prévia do Cardápio Digital 2.0"
-              class="projetos-imagem"
-            />
+          <article class="cartao-projeto" data-cartao-projeto>
+            <div
+              class="vitrine-projeto"
+              aria-label="Capturas do Cardápio Digital v2.0"
+            >
+              <div class="vitrine-cena">
+                <figure class="quadro-vitrine quadro-vitrine-pc">
+                  <img
+                    src="img/PC-Versão-2.0.png"
+                    alt="Interface em computador do Cardápio Digital v2.0"
+                    class="imagem-vitrine imagem-vitrine-pc"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="quadro-vitrine quadro-vitrine-mobile">
+                  <img
+                    src="img/Mobile-Versão-2.0.png"
+                    alt="Interface em celular do Cardápio Digital v2.0"
+                    class="imagem-vitrine imagem-vitrine-mobile"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+            </div>
 
             <div class="caixa-textos-projeto">
               <div class="projeto-topo">
-                <span class="status-projeto status-projeto-atual">Atual</span>
-                <h3 class="info-projetos">Cardápio Digital 2.0</h3>
+                <span class="etiqueta-projeto etiqueta-projeto-atual">Atual</span>
+                <h3 class="info-projetos">
+                  Cardápio Digital v2.0 - Tobia's Lanches
+                </h3>
               </div>
 
               <p class="paragrafo-projetos">
-                A versão mais completa do Cardápio Digital, criada para deixar
-                a experiência mais fluida para quem pede e mais consistente
-                para quem gerencia o sistema.
+                Evolução do cardápio digital criada para unir
+                catálogo público, checkout por WhatsApp e um painel
+                Admin mais preparado para manutenção diária e
+                operação online.
               </p>
 
-              <ul class="stack-projeto" aria-label="Stack do projeto">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
+              <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript Vanilla</li>
                 <li>Supabase</li>
-                <li>Netlify</li>
+                <li>Vercel</li>
               </ul>
 
               <div class="botoes-projeto">
@@ -106,7 +155,7 @@
                 <button
                   type="button"
                   class="botao-projeto botao-projeto-secundario"
-                  data-project-toggle
+                  data-alternar-detalhes-projeto
                   aria-expanded="false"
                   aria-controls="detalhes-projeto-v2"
                 >
@@ -117,55 +166,111 @@
               <div
                 id="detalhes-projeto-v2"
                 class="projeto-detalhes"
-                data-project-details
+                data-detalhes-projeto
                 hidden
               >
                 <div class="projeto-detalhes-bloco">
-                  <h4>O que evoluiu</h4>
+                  <h4>Contexto da versão</h4>
                   <p>
-                    Reestruturei o sistema para dar mais clareza ao catálogo,
-                    ao carrinho, ao checkout e à área administrativa, mantendo
-                    uma base mais estável para manutenção e crescimento.
+                    A v2.0 nasceu como evolução direta da primeira
+                    versão do cardápio digital. A proposta continua a
+                    mesma, mas a base ficou mais madura: navegação
+                    pública melhor resolvida, checkout mais sólido,
+                    Admin mais preparado para a rotina real e estrutura pronta
+                    para operar online sem deixar de ser simples de publicar.
                   </p>
                 </div>
 
                 <div class="projeto-detalhes-bloco">
-                  <h4>Destaques do projeto</h4>
+                  <h4>Recursos principais</h4>
                   <ul class="projeto-detalhes-lista">
-                    <li>Painel Admin mais sólido para produtos, categorias, adicionais e configurações.</li>
-                    <li>Interface mais consistente em desktop e mobile.</li>
-                    <li>Estrutura preparada para operação online com Supabase.</li>
+                    <li>
+                      Catálogo público mais claro, com melhor leitura
+                      de categorias, produtos, combos e adicionais.
+                    </li>
+                    <li>
+                      Carrinho e checkout estruturados para entrega, retirada ou
+                      consumo no local, com taxa por localidade, mesa, Pix e
+                      dados de endereço mais completos.
+                    </li>
+                    <li>
+                      Painel Admin mais amplo para produtos, categorias,
+                      adicionais, combos, configurações, relatórios
+                      e operação online com Supabase.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="projeto-detalhes-bloco">
+                  <h4>O que este projeto demonstra</h4>
+                  <ul class="projeto-detalhes-lista">
+                    <li>
+                      Capacidade de evoluir uma solução simples para
+                      um sistema mais consistente, sem perder clareza de uso.
+                    </li>
+                    <li>
+                      Equilíbrio entre experiência do cliente,
+                      manutenção administrativa e publicação.
+                    </li>
+                    <li>
+                      Estrutura pensada para continuar crescendo, inclusive em
+                      operação online, com base técnica mais organizada.
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="projetos-card" data-project-card>
-            <img
-              src="img/ImagemProjetoTLanches.png"
-              alt="Prévia da primeira versão do Cardápio Digital"
-              class="projetos-imagem"
-            />
+          <article class="cartao-projeto" data-cartao-projeto>
+            <div
+              class="vitrine-projeto"
+              aria-label="Capturas da primeira versão do Cardápio Digital"
+            >
+              <div class="vitrine-cena">
+                <figure class="quadro-vitrine quadro-vitrine-pc">
+                  <img
+                    src="img/PC-Versão-1.0.png"
+                    alt="Interface em computador da primeira versão do Cardápio Digital"
+                    class="imagem-vitrine imagem-vitrine-pc"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="quadro-vitrine quadro-vitrine-mobile">
+                  <img
+                    src="img/Mobile-Versão-1.0.png"
+                    alt="Interface em celular da primeira versão do Cardápio Digital"
+                    class="imagem-vitrine imagem-vitrine-mobile"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+            </div>
 
             <div class="caixa-textos-projeto">
               <div class="projeto-topo">
-                <span class="status-projeto status-projeto-base">Versão inicial</span>
-                <h3 class="info-projetos">Cardápio Digital - versão inicial</h3>
+                <span class="etiqueta-projeto etiqueta-projeto-inicial"
+                  >Versão inicial</span
+                >
+                <h3 class="info-projetos">
+                  Cardápio Digital - Tobias Lanches
+                </h3>
               </div>
 
               <p class="paragrafo-projetos">
-                Foi a primeira versão que colocou a ideia para funcionar na
-                prática, organizando catálogo, seleção e envio de pedidos por
-                WhatsApp de um jeito simples e direto.
+                Primeira versão criada para organizar o atendimento do
+                quiosque, substituindo o PDF estático por um cardápio
+                navegável com carrinho e pedido enviado direto pelo
+                WhatsApp.
               </p>
 
-              <ul class="stack-projeto" aria-label="Stack do projeto">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
+              <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript Vanilla</li>
                 <li>WhatsApp</li>
-                <li>UI responsiva</li>
+                <li>localStorage</li>
               </ul>
 
               <div class="botoes-projeto">
@@ -179,7 +284,7 @@
                 <button
                   type="button"
                   class="botao-projeto botao-projeto-secundario"
-                  data-project-toggle
+                  data-alternar-detalhes-projeto
                   aria-expanded="false"
                   aria-controls="detalhes-projeto-base"
                 >
@@ -190,31 +295,61 @@
               <div
                 id="detalhes-projeto-base"
                 class="projeto-detalhes"
-                data-project-details
+                data-detalhes-projeto
                 hidden
               >
                 <div class="projeto-detalhes-bloco">
-                  <h4>Como começou</h4>
+                  <h4>Problema que a versão resolveu</h4>
                   <p>
-                    Aqui nasceu a primeira base do fluxo público de pedidos,
-                    com catálogo interativo, carrinho e envio para WhatsApp sem
-                    depender de aplicativo nativo.
+                    Este foi o projeto que tirou o cardápio do PDF estático
+                    e levou o pedido para uma experiência mais direta no
+                    navegador. A ideia era organizar melhor o atendimento do
+                    quiosque e reduzir a confusão do pedido manual no
+                    WhatsApp.
                   </p>
                 </div>
 
                 <div class="projeto-detalhes-bloco">
-                  <h4>O que essa versão entregou</h4>
+                  <h4>O que a primeira versão já entregava</h4>
                   <ul class="projeto-detalhes-lista">
-                    <li>Estrutura inicial de catálogo responsivo para um quiosque real.</li>
-                    <li>Fluxo de pedido pensado para rapidez e clareza.</li>
-                    <li>Base que abriu caminho para a evolução até a versão 2.0.</li>
+                    <li>
+                      Catálogo organizado por categorias, com produtos,
+                      descrições e preços pensados para leitura
+                      rápida no celular.
+                    </li>
+                    <li>
+                      Carrinho com revisão dos itens e montagem automática
+                      da mensagem para envio direto ao atendimento no WhatsApp.
+                    </li>
+                    <li>
+                      Painel administrativo para cadastrar, editar ou remover
+                      itens, com persistência local no navegador.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="projeto-detalhes-bloco">
+                  <h4>Por que essa versão importa</h4>
+                  <ul class="projeto-detalhes-lista">
+                    <li>
+                      Provou a ideia em um contexto real, com foco em rapidez,
+                      clareza e uso mobile.
+                    </li>
+                    <li>
+                      Mostra a primeira estrutura funcional do produto antes da
+                      evolução para a v2.0.
+                    </li>
+                    <li>
+                      Deixa claro como transformo uma necessidade concreta em
+                      solução utilizável e fácil de manter.
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </article>
 
-          <article class="projetos-card" data-project-card>
+          <article class="cartao-projeto" data-cartao-projeto>
             <img
               src="img/Loading.png"
               alt="Prévia do próximo projeto"
@@ -223,31 +358,34 @@
 
             <div class="caixa-textos-projeto">
               <div class="projeto-topo">
-                <span class="status-projeto status-projeto-futuro">Em breve</span>
-                <h3 class="info-projetos">Próximo projeto</h3>
+                <span class="etiqueta-projeto etiqueta-projeto-futuro"
+                  >Em breve</span
+                >
+                <h3 class="info-projetos">Próximo case aplicado</h3>
               </div>
 
               <p class="paragrafo-projetos">
-                Espaço reservado para o próximo projeto que vai entrar no
-                portfólio com demonstração própria, contexto claro e um recorte
-                técnico mais completo.
+                Espaço reservado para o próximo projeto que entrar
+                no portfólio com problema real, solução publicada
+                e um recorte técnico mais forte do que cabe hoje nos
+                resumos atuais.
               </p>
 
-              <ul class="stack-projeto" aria-label="Tipo de projeto">
+              <ul class="tecnologias-projeto" aria-label="Direção do próximo case">
                 <li>Case aplicado</li>
                 <li>Backend</li>
                 <li>Dados</li>
-                <li>Operação real</li>
+                <li>Integração</li>
               </ul>
 
               <div class="botoes-projeto">
-                <span class="botao-projeto disabled" aria-disabled="true"
+                <span class="botao-projeto desabilitado" aria-disabled="true"
                   >Ver projeto</span
                 >
                 <button
                   type="button"
                   class="botao-projeto botao-projeto-secundario"
-                  data-project-toggle
+                  data-alternar-detalhes-projeto
                   aria-expanded="false"
                   aria-controls="detalhes-projeto-futuro"
                 >
@@ -258,16 +396,26 @@
               <div
                 id="detalhes-projeto-futuro"
                 class="projeto-detalhes"
-                data-project-details
+                data-detalhes-projeto
                 hidden
               >
                 <div class="projeto-detalhes-bloco">
-                  <h4>O que ainda vem</h4>
+                  <h4>Como quero preencher esse espaço</h4>
                   <p>
-                    A ideia é usar esse próximo espaço para mostrar um novo
-                    projeto do começo ao fim, com problema bem definido, solução
-                    publicada e decisões mais visíveis.
+                    O objetivo aqui não é colocar qualquer projeto,
+                    mas um case com problema claro, solução publicada
+                    e decisões técnicas mais visíveis do que
+                    as que cabem no resumo do card.
                   </p>
+                </div>
+
+                <div class="projeto-detalhes-bloco">
+                  <h4>O que esse próximo case precisa mostrar</h4>
+                  <ul class="projeto-detalhes-lista">
+                    <li>Fluxo completo, do contexto do problema até a entrega da solução.</li>
+                    <li>Recorte técnico mais forte em backend, dados ou operação real.</li>
+                    <li>Demonstração que mostre resultado, não só interface.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -277,20 +425,18 @@
     </section>
 
     <script>
-      document.body.classList.add("js-ready");
+      document.body.classList.add("js-pronto");
 
       if ("scrollRestoration" in window.history) {
         window.history.scrollRestoration = "manual";
       }
 
-      const linksMenu = Array.from(document.querySelectorAll(".menu-link"));
+      const linksMenu = Array.from(document.querySelectorAll(".menu-atalho"));
       const secoesMenu = linksMenu
-        .map((link) => document.querySelector(link.getAttribute("href")))
+        .map((atalho) => document.querySelector(atalho.getAttribute("href")))
         .filter(Boolean);
-      const atrasosCorrecaoNavegacao = [260, 520, 880];
       let idMenuTravado = null;
       let menuTravadoAte = 0;
-      let temporizadoresCorrecao = [];
 
       function obterOffsetNavegacao() {
         const menu = document.querySelector(".menu");
@@ -316,13 +462,6 @@
         return secao.querySelector(".sobre-titulo, .projetos-titulo") || secao;
       }
 
-      function limparCorrecoesNavegacao() {
-        temporizadoresCorrecao.forEach((temporizador) =>
-          clearTimeout(temporizador)
-        );
-        temporizadoresCorrecao = [];
-      }
-
       function obterDestinoNavegacao(secao) {
         const alvoNavegacao = obterAlvoNavegacao(secao);
 
@@ -334,45 +473,15 @@
         );
       }
 
-      // Recalcula o alvo apos o clique para cobrir pequenas mudancas de viewport no mobile.
-      function corrigirPosicaoNavegacao(secao) {
-        if (!secao || idMenuTravado !== secao.id) {
-          return;
-        }
-
-        const diferenca =
-          obterAlvoNavegacao(secao).getBoundingClientRect().top -
-          obterOffsetNavegacao();
-
-        if (Math.abs(diferenca) > 1) {
-          window.scrollBy({
-            top: diferenca,
-            behavior: "auto",
-          });
-        }
-      }
-
-      function agendarCorrecoesNavegacao(secao) {
-        limparCorrecoesNavegacao();
-
-        atrasosCorrecaoNavegacao.forEach((atraso) => {
-          const temporizador = window.setTimeout(() => {
-            corrigirPosicaoNavegacao(secao);
-          }, atraso);
-
-          temporizadoresCorrecao.push(temporizador);
-        });
-      }
-
       function marcarLinkAtivo(idAtivo) {
-        linksMenu.forEach((link) => {
-          const estaAtivo = link.getAttribute("href") === `#${idAtivo}`;
-          link.classList.toggle("is-active", estaAtivo);
+        linksMenu.forEach((atalho) => {
+          const estaAtivo = atalho.getAttribute("href") === `#${idAtivo}`;
+          atalho.classList.toggle("esta-ativo", estaAtivo);
 
           if (estaAtivo) {
-            link.setAttribute("aria-current", "page");
+            atalho.setAttribute("aria-current", "page");
           } else {
-            link.removeAttribute("aria-current");
+            atalho.removeAttribute("aria-current");
           }
         });
       }
@@ -393,16 +502,16 @@
         }
       });
 
-      linksMenu.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          const seletorAlvo = link.getAttribute("href");
+      linksMenu.forEach((atalho) => {
+        atalho.addEventListener("click", (evento) => {
+          const seletorAlvo = atalho.getAttribute("href");
           const secaoAlvo = document.querySelector(seletorAlvo);
 
           if (!secaoAlvo) {
             return;
           }
 
-          event.preventDefault();
+          evento.preventDefault();
 
           const destino = obterDestinoNavegacao(secaoAlvo);
 
@@ -414,7 +523,6 @@
             behavior: "smooth",
           });
 
-          agendarCorrecoesNavegacao(secaoAlvo);
           marcarLinkAtivo(secaoAlvo.id);
         });
       });
@@ -423,13 +531,13 @@
         let sincronizacaoPendente = false;
 
         function obterIdAtivoPorScroll() {
-          const offset = obterOffsetNavegacao() + 18;
+          const deslocamento = obterOffsetNavegacao() + 18;
           const posicoes = secoesMenu.map((secao) => ({
             id: secao.id,
             top: obterAlvoNavegacao(secao).getBoundingClientRect().top,
           }));
           const secoesAtingidas = posicoes.filter(
-            (posicao) => posicao.top <= offset
+            (posicao) => posicao.top <= deslocamento
           );
 
           if (secoesAtingidas.length) {
@@ -474,22 +582,22 @@
       }
 
       const botoesDetalhesProjeto = Array.from(
-        document.querySelectorAll("[data-project-toggle]")
+        document.querySelectorAll("[data-alternar-detalhes-projeto]")
       );
 
       function definirEstadoDetalhesProjeto(botao, expandido) {
         const idPainel = botao.getAttribute("aria-controls");
         const painel = document.getElementById(idPainel);
-        const card = botao.closest("[data-project-card]");
+        const cartao = botao.closest("[data-cartao-projeto]");
 
-        if (!painel || !card) {
+        if (!painel || !cartao) {
           return;
         }
 
         botao.setAttribute("aria-expanded", String(expandido));
         botao.textContent = expandido ? "Ocultar detalhes" : "Ver detalhes";
         painel.hidden = !expandido;
-        card.classList.toggle("projetos-card--expanded", expandido);
+        cartao.classList.toggle("cartao-projeto--expandido", expandido);
       }
 
       function fecharOutrosDetalhesProjeto(botaoAtivo) {
