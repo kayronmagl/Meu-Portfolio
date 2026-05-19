@@ -396,7 +396,7 @@ h1 {
 
 .vitrine-cena {
   position: relative;
-  min-height: clamp(220px, 19vw, 248px);
+  min-height: clamp(176px, 16vw, 204px);
 }
 
 .quadro-vitrine {
@@ -429,7 +429,10 @@ h1 {
 }
 
 .quadro-vitrine-pc {
-  inset: 0 15% 2.1rem 0;
+  top: 0;
+  left: 0;
+  width: 85%;
+  aspect-ratio: 16 / 9;
   z-index: 1;
 }
 
@@ -437,7 +440,7 @@ h1 {
   top: auto;
   right: 0;
   bottom: 0;
-  width: clamp(8.6rem, 13vw, 10.5rem);
+  width: clamp(8.4rem, 11.8vw, 10.5rem);
   aspect-ratio: 16 / 9;
   z-index: 2;
 }
