@@ -1,774 +1,649 @@
 ﻿<!doctype html>
 <html lang="pt-BR">
-  <head>
-    <link
-      rel="icon"
-      type="image/png"
-      href="img/LogoMarcaPessoalBrancaTransparente.png"
-      sizes="96x96"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio de Kayron Magalhães</title>
-  </head>
 
-  <body>
-    <div class="particulas"></div>
+<head>
+  <link rel="icon" type="image/png" href="img/FaviconPortfolio.png" sizes="512x512" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
+</head>
 
-    <nav class="navegacao" aria-label="Navegação principal">
-      <ul class="menu">
-        <li><a href="#inicio" class="menu-atalho">Início</a></li>
-        <li><a href="#sobre" class="menu-atalho">Sobre mim</a></li>
-        <li><a href="#projetos" class="menu-atalho">Projetos</a></li>
-      </ul>
-    </nav>
+<body>
+  <div class="particulas"></div>
 
-    <main id="inicio" class="cabecalho">
-      <div class="cabecalho-painel">
-        <img
-          src="img/LogoMarcaPessoalBrancaTransparente.png"
-          alt="Logo de Kayron Magalhães"
-          class="logo-pessoal"
-        />
-        <h1>Kayron Magalhães</h1>
-        <p class="cabecalho-sub-titulo">
-          Desenvolvedor em formação, criando sistemas web práticos para
-          organizar atendimento, catálogos e pedidos.
-        </p>
-        <div class="cabecalho-acoes" aria-label="Link principal">
-          <a
-            href="https://linktr.ee/kaka.dev"
-            class="cabecalho-acao-linktree"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Abrir Linktree de Kayron Magalhães"
-            title="Linktree"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              class="cabecalho-acao-icone"
-            >
-              <path
-                fill="currentColor"
-                d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.89h1.294v4.776c0 .486-.404.89-.89.89H6.577a.898.898 0 0 1-.889-.891v-4.774H.992c-.728 0-1.214-.729-.89-1.377l6.96-12.627a1.065 1.065 0 0 1 1.863 0l2.913 5.585-3.885 7.042zm15.945 0l-6.96-12.627a1.065 1.065 0 0 0-1.862 0l-2.995 5.586 3.885 7.04c.081.164.081.326.081.487-.08.517-.529.897-1.052.89h-1.296v4.776c.005.49.4.887.89.89h2.914a.9.9 0 0 0 .892-.89v-4.775h4.612c.73 0 1.214-.729.89-1.377Z"
-              />
-            </svg>
-          </a>
+  <nav class="navegacao" aria-label="Navegação principal">
+    <ul class="menu">
+      <li><a href="#inicio" class="menu-atalho">Início</a></li>
+      <li><a href="#sobre" class="menu-atalho">Sobre mim</a></li>
+      <li><a href="#projetos" class="menu-atalho">Projetos</a></li>
+    </ul>
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <div class="cabecalho-painel">
+      <img src="img/LogoMarcaPessoalBrancaTransparente.png" alt="Logo de Kayron Magalhães" class="logo-pessoal" />
+      <h1>Kayron Magalhães</h1>
+      <p class="cabecalho-sub-titulo">
+        Desenvolvedor em formação, criando sistemas web práticos para
+        organizar atendimento, catálogos e pedidos.
+      </p>
+      <div class="cabecalho-acoes" aria-label="Link principal">
+        <a href="https://linktr.ee/kaka.dev" class="cabecalho-acao-linktree" target="_blank" rel="noreferrer"
+          aria-label="Abrir Linktree de Kayron Magalhães" title="Linktree">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="cabecalho-acao-icone">
+            <path fill="currentColor"
+              d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.89h1.294v4.776c0 .486-.404.89-.89.89H6.577a.898.898 0 0 1-.889-.891v-4.774H.992c-.728 0-1.214-.729-.89-1.377l6.96-12.627a1.065 1.065 0 0 1 1.863 0l2.913 5.585-3.885 7.042zm15.945 0l-6.96-12.627a1.065 1.065 0 0 0-1.862 0l-2.995 5.586 3.885 7.04c.081.164.081.326.081.487-.08.517-.529.897-1.052.89h-1.296v4.776c.005.49.4.887.89.89h2.914a.9.9 0 0 0 .892-.89v-4.775h4.612c.73 0 1.214-.729.89-1.377Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <section id="sobre" class="sobre">
+    <div class="secao-limite">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+        <div class="sobre-biografia">
+          <p class="sobre-abertura">
+            Olá! Meu nome é Kayron, tenho 18 anos e sou
+            técnico em Desenvolvimento de Sistemas (Senai) e
+            Computação em Nuvem (IFCE), com base também em
+            Inteligência Artificial.
+          </p>
+          <p class="sobre-corpo">
+            Tenho base em desenvolvimento web, cloud, dados, UX,
+            segurança da informação e automação,
+            e gosto de transformar esse repertório em soluções
+            que funcionem bem na prática. Meu foco é construir
+            aplicações com interface clara, estrutura organizada e
+            comportamento confiável, pensando tanto em quem usa quanto em
+            quem precisa manter o sistema evoluindo.
+          </p>
         </div>
       </div>
-    </main>
+    </div>
+  </section>
 
-    <section id="sobre" class="sobre">
-      <div class="secao-limite">
-        <h2 class="sobre-titulo">Sobre mim</h2>
-        <div class="sobre-caixa">
-          <div class="sobre-biografia">
-            <p class="sobre-abertura">
-              Olá! Meu nome é Kayron, tenho 18 anos e sou
-              técnico em Desenvolvimento de Sistemas (Senai) e
-              Computação em Nuvem (IFCE), com base também em
-              Inteligência Artificial.
-            </p>
-            <p class="sobre-corpo">
-              Tenho base em desenvolvimento web, cloud, dados, UX,
-              segurança da informação e automação,
-              e gosto de transformar esse repertório em soluções
-              que funcionem bem na prática. Meu foco é construir
-              aplicações com interface clara, estrutura organizada e
-              comportamento confiável, pensando tanto em quem usa quanto em
-              quem precisa manter o sistema evoluindo.
-            </p>
+  <section id="projetos" class="projetos">
+    <div class="secao-limite">
+      <h2 class="projetos-titulo">Projetos</h2>
+      <p class="projetos-abertura">
+        Projetos pensados para uso real, com atenção à
+        experiência, à estrutura do sistema e à
+        evolução de cada solução.
+      </p>
+
+      <div class="projetos-caixa">
+        <article class="cartao-projeto" data-cartao-projeto>
+          <div class="vitrine-projeto" aria-label="Capturas do Cardápio Digital v2.0">
+            <div class="vitrine-cena vitrine-cena-v2 vitrine-cena-rolavel">
+              <figure class="quadro-vitrine quadro-vitrine-pc">
+                <img src="img/PC-Versão-2.0.png" alt="Interface em computador do Cardápio Digital v2.0"
+                  class="imagem-vitrine imagem-vitrine-pc" loading="lazy" />
+              </figure>
+
+              <figure class="quadro-vitrine quadro-vitrine-tablet">
+                <img src="img/Tablet-Versão-2.0.png" alt="Interface em tablet do Cardápio Digital v2.0"
+                  class="imagem-vitrine imagem-vitrine-tablet" loading="lazy" />
+              </figure>
+
+              <figure class="quadro-vitrine quadro-vitrine-mobile">
+                <img src="img/Mobile-Versão-2.0.png" alt="Interface em celular do Cardápio Digital v2.0"
+                  class="imagem-vitrine imagem-vitrine-mobile" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="rotulos-vitrine" role="group" aria-label="Escolher captura do Cardápio Digital v2.0">
+              <button type="button" class="rotulo-vitrine-botao esta-ativo" data-ir-para-vitrine="0"
+                aria-pressed="true">
+                Desktop
+              </button>
+              <button type="button" class="rotulo-vitrine-botao" data-ir-para-vitrine="1" aria-pressed="false">
+                Tablet
+              </button>
+              <button type="button" class="rotulo-vitrine-botao" data-ir-para-vitrine="2" aria-pressed="false">
+                Mobile
+              </button>
+            </div>
           </div>
-        </div>
+
+          <div class="caixa-textos-projeto">
+            <div class="projeto-topo">
+              <span class="etiqueta-projeto etiqueta-projeto-atual">Atual</span>
+              <h3 class="info-projetos">
+                Cardápio Digital v2.0 - Tobia's Lanches
+              </h3>
+            </div>
+
+            <p class="paragrafo-projetos">
+              Evolução do cardápio digital criada para unir
+              catálogo público, checkout por WhatsApp e um painel
+              Admin mais preparado para manutenção diária e
+              operação online.
+            </p>
+
+            <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript Vanilla</li>
+              <li>Supabase</li>
+              <li>Vercel</li>
+            </ul>
+
+            <div class="botoes-projeto">
+              <a href="https://cardapio-digital-tobias-lanches-v2-0.vercel.app/" class="botao-projeto" target="_blank"
+                rel="noreferrer">Ver projeto</a>
+              <button type="button" class="botao-projeto botao-projeto-secundario" data-alternar-detalhes-projeto
+                aria-expanded="false" aria-controls="detalhes-projeto-v2">
+                Ver detalhes
+              </button>
+            </div>
+
+            <div id="detalhes-projeto-v2" class="projeto-detalhes" data-detalhes-projeto hidden>
+              <div class="projeto-detalhes-bloco">
+                <h4>Contexto da versão</h4>
+                <p>
+                  A v2.0 nasceu como evolução direta da primeira
+                  versão do cardápio digital. A proposta continua a
+                  mesma, mas a base ficou mais madura: navegação
+                  pública melhor resolvida, checkout mais sólido,
+                  Admin mais preparado para a rotina real e estrutura pronta
+                  para operar online sem deixar de ser simples de publicar.
+                </p>
+              </div>
+
+              <div class="projeto-detalhes-bloco">
+                <h4>Recursos principais</h4>
+                <ul class="projeto-detalhes-lista">
+                  <li>
+                    Catálogo público mais claro, com melhor leitura
+                    de categorias, produtos, combos e adicionais.
+                  </li>
+                  <li>
+                    Carrinho e checkout estruturados para entrega, retirada ou
+                    consumo no local, com taxa por localidade, mesa, Pix e
+                    dados de endereço mais completos.
+                  </li>
+                  <li>
+                    Painel Admin mais amplo para produtos, categorias,
+                    adicionais, combos, configurações, relatórios
+                    e operação online com Supabase.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="projeto-detalhes-bloco">
+                <h4>O que este projeto demonstra</h4>
+                <ul class="projeto-detalhes-lista">
+                  <li>
+                    Capacidade de evoluir uma solução simples para
+                    um sistema mais consistente, sem perder clareza de uso.
+                  </li>
+                  <li>
+                    Equilíbrio entre experiência do cliente,
+                    manutenção administrativa e publicação.
+                  </li>
+                  <li>
+                    Estrutura pensada para continuar crescendo, inclusive em
+                    operação online, com base técnica mais organizada.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cartao-projeto" data-cartao-projeto>
+          <div class="vitrine-projeto" aria-label="Capturas da primeira versão do Cardápio Digital">
+            <div class="vitrine-cena vitrine-cena-rolavel">
+              <figure class="quadro-vitrine quadro-vitrine-pc">
+                <img src="img/PC-Versão-1.0.png" alt="Interface em computador da primeira versão do Cardápio Digital"
+                  class="imagem-vitrine imagem-vitrine-pc" loading="lazy" />
+              </figure>
+
+              <figure class="quadro-vitrine quadro-vitrine-mobile">
+                <img src="img/Mobile-Versão-1.0.png" alt="Interface em celular da primeira versão do Cardápio Digital"
+                  class="imagem-vitrine imagem-vitrine-mobile" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="rotulos-vitrine" role="group"
+              aria-label="Escolher captura da primeira versão do Cardápio Digital">
+              <button type="button" class="rotulo-vitrine-botao esta-ativo" data-ir-para-vitrine="0"
+                aria-pressed="true">
+                Desktop
+              </button>
+              <button type="button" class="rotulo-vitrine-botao" data-ir-para-vitrine="1" aria-pressed="false">
+                Mobile
+              </button>
+            </div>
+          </div>
+
+          <div class="caixa-textos-projeto">
+            <div class="projeto-topo">
+              <span class="etiqueta-projeto etiqueta-projeto-inicial">Versão inicial</span>
+              <h3 class="info-projetos">
+                Cardápio Digital - Tobias Lanches
+              </h3>
+            </div>
+
+            <p class="paragrafo-projetos">
+              Primeira versão criada para organizar o atendimento do
+              quiosque, substituindo o PDF estático por um cardápio
+              navegável com carrinho e pedido enviado direto pelo
+              WhatsApp.
+            </p>
+
+            <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript Vanilla</li>
+              <li>WhatsApp</li>
+              <li>localStorage</li>
+            </ul>
+
+            <div class="botoes-projeto">
+              <a href="https://democardapio-digital-tobias-lanches.vercel.app/" class="botao-projeto" target="_blank"
+                rel="noreferrer">Ver projeto</a>
+              <button type="button" class="botao-projeto botao-projeto-secundario" data-alternar-detalhes-projeto
+                aria-expanded="false" aria-controls="detalhes-projeto-base">
+                Ver detalhes
+              </button>
+            </div>
+
+            <div id="detalhes-projeto-base" class="projeto-detalhes" data-detalhes-projeto hidden>
+              <div class="projeto-detalhes-bloco">
+                <h4>Problema que a versão resolveu</h4>
+                <p>
+                  Este foi o projeto que tirou o cardápio do PDF estático
+                  e levou o pedido para uma experiência mais direta no
+                  navegador. A ideia era organizar melhor o atendimento do
+                  quiosque e reduzir a confusão do pedido manual no
+                  WhatsApp.
+                </p>
+              </div>
+
+              <div class="projeto-detalhes-bloco">
+                <h4>O que a primeira versão já entregava</h4>
+                <ul class="projeto-detalhes-lista">
+                  <li>
+                    Catálogo organizado por categorias, com produtos,
+                    descrições e preços pensados para leitura
+                    rápida no celular.
+                  </li>
+                  <li>
+                    Carrinho com revisão dos itens e montagem automática
+                    da mensagem para envio direto ao atendimento no WhatsApp.
+                  </li>
+                  <li>
+                    Painel administrativo para cadastrar, editar ou remover
+                    itens, com persistência local no navegador.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="projeto-detalhes-bloco">
+                <h4>Por que essa versão importa</h4>
+                <ul class="projeto-detalhes-lista">
+                  <li>
+                    Provou a ideia em um contexto real, com foco em rapidez,
+                    clareza e uso mobile.
+                  </li>
+                  <li>
+                    Mostra a primeira estrutura funcional do produto antes da
+                    evolução para a v2.0.
+                  </li>
+                  <li>
+                    Deixa claro como transformo uma necessidade concreta em
+                    solução utilizável e fácil de manter.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cartao-projeto" data-cartao-projeto>
+          <img src="img/Loading.png" alt="Prévia do próximo projeto" class="projetos-imagem" />
+
+          <div class="caixa-textos-projeto">
+            <div class="projeto-topo">
+              <span class="etiqueta-projeto etiqueta-projeto-futuro">Em breve</span>
+              <h3 class="info-projetos">Próximo case aplicado</h3>
+            </div>
+
+            <p class="paragrafo-projetos">
+              Espaço reservado para o próximo projeto que entrar
+              no portfólio com problema real, solução publicada
+              e um recorte técnico mais forte do que cabe hoje nos
+              resumos atuais.
+            </p>
+
+            <ul class="tecnologias-projeto" aria-label="Direção do próximo case">
+              <li>Case aplicado</li>
+              <li>Backend</li>
+              <li>Dados</li>
+              <li>Integração</li>
+            </ul>
+
+            <div class="botoes-projeto">
+              <span class="botao-projeto desabilitado" aria-disabled="true">Ver projeto</span>
+              <button type="button" class="botao-projeto botao-projeto-secundario" data-alternar-detalhes-projeto
+                aria-expanded="false" aria-controls="detalhes-projeto-futuro">
+                Ver detalhes
+              </button>
+            </div>
+
+            <div id="detalhes-projeto-futuro" class="projeto-detalhes" data-detalhes-projeto hidden>
+              <div class="projeto-detalhes-bloco">
+                <h4>Como quero preencher esse espaço</h4>
+                <p>
+                  O objetivo aqui não é colocar qualquer projeto,
+                  mas um case com problema claro, solução publicada
+                  e decisões técnicas mais visíveis do que
+                  as que cabem no resumo do card.
+                </p>
+              </div>
+
+              <div class="projeto-detalhes-bloco">
+                <h4>O que esse próximo case precisa mostrar</h4>
+                <ul class="projeto-detalhes-lista">
+                  <li>Fluxo completo, do contexto do problema até a entrega da solução.</li>
+                  <li>Recorte técnico mais forte em backend, dados ou operação real.</li>
+                  <li>Demonstração que mostre resultado, não só interface.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projetos" class="projetos">
-      <div class="secao-limite">
-        <h2 class="projetos-titulo">Projetos</h2>
-        <p class="projetos-abertura">
-          Projetos pensados para uso real, com atenção à
-          experiência, à estrutura do sistema e à
-          evolução de cada solução.
-        </p>
+  <script>
+    document.body.classList.add("js-pronto");
 
-        <div class="projetos-caixa">
-          <article class="cartao-projeto" data-cartao-projeto>
-            <div
-              class="vitrine-projeto"
-              aria-label="Capturas do Cardápio Digital v2.0"
-            >
-              <div class="vitrine-cena vitrine-cena-v2 vitrine-cena-rolavel">
-                <figure class="quadro-vitrine quadro-vitrine-pc">
-                  <img
-                    src="img/PC-Versão-2.0.png"
-                    alt="Interface em computador do Cardápio Digital v2.0"
-                    class="imagem-vitrine imagem-vitrine-pc"
-                    loading="lazy"
-                  />
-                </figure>
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
 
-                <figure class="quadro-vitrine quadro-vitrine-tablet">
-                  <img
-                    src="img/Tablet-Versão-2.0.png"
-                    alt="Interface em tablet do Cardápio Digital v2.0"
-                    class="imagem-vitrine imagem-vitrine-tablet"
-                    loading="lazy"
-                  />
-                </figure>
+    const linksMenu = Array.from(document.querySelectorAll(".menu-atalho"));
+    const secoesMenu = linksMenu
+      .map((atalho) => document.querySelector(atalho.getAttribute("href")))
+      .filter(Boolean);
+    let idMenuTravado = null;
+    let menuTravadoAte = 0;
 
-                <figure class="quadro-vitrine quadro-vitrine-mobile">
-                  <img
-                    src="img/Mobile-Versão-2.0.png"
-                    alt="Interface em celular do Cardápio Digital v2.0"
-                    class="imagem-vitrine imagem-vitrine-mobile"
-                    loading="lazy"
-                  />
-                </figure>
-              </div>
+    function obterOffsetNavegacao() {
+      const menu = document.querySelector(".menu");
+      const navegacao = document.querySelector(".navegacao");
+      const folgaExtra = window.matchMedia("(max-width: 767px)").matches
+        ? 4
+        : 5;
 
-              <div
-                class="rotulos-vitrine"
-                role="group"
-                aria-label="Escolher captura do Cardápio Digital v2.0"
-              >
-                <button
-                  type="button"
-                  class="rotulo-vitrine-botao esta-ativo"
-                  data-ir-para-vitrine="0"
-                  aria-pressed="true"
-                >
-                  Desktop
-                </button>
-                <button
-                  type="button"
-                  class="rotulo-vitrine-botao"
-                  data-ir-para-vitrine="1"
-                  aria-pressed="false"
-                >
-                  Tablet
-                </button>
-                <button
-                  type="button"
-                  class="rotulo-vitrine-botao"
-                  data-ir-para-vitrine="2"
-                  aria-pressed="false"
-                >
-                  Mobile
-                </button>
-              </div>
-            </div>
-
-            <div class="caixa-textos-projeto">
-              <div class="projeto-topo">
-                <span class="etiqueta-projeto etiqueta-projeto-atual">Atual</span>
-                <h3 class="info-projetos">
-                  Cardápio Digital v2.0 - Tobia's Lanches
-                </h3>
-              </div>
-
-              <p class="paragrafo-projetos">
-                Evolução do cardápio digital criada para unir
-                catálogo público, checkout por WhatsApp e um painel
-                Admin mais preparado para manutenção diária e
-                operação online.
-              </p>
-
-              <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript Vanilla</li>
-                <li>Supabase</li>
-                <li>Vercel</li>
-              </ul>
-
-              <div class="botoes-projeto">
-                <a
-                  href="https://cardapio-digital-tobias-lanches-v2-0.vercel.app/"
-                  class="botao-projeto"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Ver projeto</a
-                >
-                <button
-                  type="button"
-                  class="botao-projeto botao-projeto-secundario"
-                  data-alternar-detalhes-projeto
-                  aria-expanded="false"
-                  aria-controls="detalhes-projeto-v2"
-                >
-                  Ver detalhes
-                </button>
-              </div>
-
-              <div
-                id="detalhes-projeto-v2"
-                class="projeto-detalhes"
-                data-detalhes-projeto
-                hidden
-              >
-                <div class="projeto-detalhes-bloco">
-                  <h4>Contexto da versão</h4>
-                  <p>
-                    A v2.0 nasceu como evolução direta da primeira
-                    versão do cardápio digital. A proposta continua a
-                    mesma, mas a base ficou mais madura: navegação
-                    pública melhor resolvida, checkout mais sólido,
-                    Admin mais preparado para a rotina real e estrutura pronta
-                    para operar online sem deixar de ser simples de publicar.
-                  </p>
-                </div>
-
-                <div class="projeto-detalhes-bloco">
-                  <h4>Recursos principais</h4>
-                  <ul class="projeto-detalhes-lista">
-                    <li>
-                      Catálogo público mais claro, com melhor leitura
-                      de categorias, produtos, combos e adicionais.
-                    </li>
-                    <li>
-                      Carrinho e checkout estruturados para entrega, retirada ou
-                      consumo no local, com taxa por localidade, mesa, Pix e
-                      dados de endereço mais completos.
-                    </li>
-                    <li>
-                      Painel Admin mais amplo para produtos, categorias,
-                      adicionais, combos, configurações, relatórios
-                      e operação online com Supabase.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="projeto-detalhes-bloco">
-                  <h4>O que este projeto demonstra</h4>
-                  <ul class="projeto-detalhes-lista">
-                    <li>
-                      Capacidade de evoluir uma solução simples para
-                      um sistema mais consistente, sem perder clareza de uso.
-                    </li>
-                    <li>
-                      Equilíbrio entre experiência do cliente,
-                      manutenção administrativa e publicação.
-                    </li>
-                    <li>
-                      Estrutura pensada para continuar crescendo, inclusive em
-                      operação online, com base técnica mais organizada.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="cartao-projeto" data-cartao-projeto>
-            <div
-              class="vitrine-projeto"
-              aria-label="Capturas da primeira versão do Cardápio Digital"
-            >
-              <div class="vitrine-cena vitrine-cena-rolavel">
-                <figure class="quadro-vitrine quadro-vitrine-pc">
-                  <img
-                    src="img/PC-Versão-1.0.png"
-                    alt="Interface em computador da primeira versão do Cardápio Digital"
-                    class="imagem-vitrine imagem-vitrine-pc"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="quadro-vitrine quadro-vitrine-mobile">
-                  <img
-                    src="img/Mobile-Versão-1.0.png"
-                    alt="Interface em celular da primeira versão do Cardápio Digital"
-                    class="imagem-vitrine imagem-vitrine-mobile"
-                    loading="lazy"
-                  />
-                </figure>
-              </div>
-
-              <div
-                class="rotulos-vitrine"
-                role="group"
-                aria-label="Escolher captura da primeira versão do Cardápio Digital"
-              >
-                <button
-                  type="button"
-                  class="rotulo-vitrine-botao esta-ativo"
-                  data-ir-para-vitrine="0"
-                  aria-pressed="true"
-                >
-                  Desktop
-                </button>
-                <button
-                  type="button"
-                  class="rotulo-vitrine-botao"
-                  data-ir-para-vitrine="1"
-                  aria-pressed="false"
-                >
-                  Mobile
-                </button>
-              </div>
-            </div>
-
-            <div class="caixa-textos-projeto">
-              <div class="projeto-topo">
-                <span class="etiqueta-projeto etiqueta-projeto-inicial"
-                  >Versão inicial</span
-                >
-                <h3 class="info-projetos">
-                  Cardápio Digital - Tobias Lanches
-                </h3>
-              </div>
-
-              <p class="paragrafo-projetos">
-                Primeira versão criada para organizar o atendimento do
-                quiosque, substituindo o PDF estático por um cardápio
-                navegável com carrinho e pedido enviado direto pelo
-                WhatsApp.
-              </p>
-
-              <ul class="tecnologias-projeto" aria-label="Tecnologias do projeto">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript Vanilla</li>
-                <li>WhatsApp</li>
-                <li>localStorage</li>
-              </ul>
-
-              <div class="botoes-projeto">
-                <a
-                  href="https://democardapio-digital-tobias-lanches.vercel.app/"
-                  class="botao-projeto"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Ver projeto</a
-                >
-                <button
-                  type="button"
-                  class="botao-projeto botao-projeto-secundario"
-                  data-alternar-detalhes-projeto
-                  aria-expanded="false"
-                  aria-controls="detalhes-projeto-base"
-                >
-                  Ver detalhes
-                </button>
-              </div>
-
-              <div
-                id="detalhes-projeto-base"
-                class="projeto-detalhes"
-                data-detalhes-projeto
-                hidden
-              >
-                <div class="projeto-detalhes-bloco">
-                  <h4>Problema que a versão resolveu</h4>
-                  <p>
-                    Este foi o projeto que tirou o cardápio do PDF estático
-                    e levou o pedido para uma experiência mais direta no
-                    navegador. A ideia era organizar melhor o atendimento do
-                    quiosque e reduzir a confusão do pedido manual no
-                    WhatsApp.
-                  </p>
-                </div>
-
-                <div class="projeto-detalhes-bloco">
-                  <h4>O que a primeira versão já entregava</h4>
-                  <ul class="projeto-detalhes-lista">
-                    <li>
-                      Catálogo organizado por categorias, com produtos,
-                      descrições e preços pensados para leitura
-                      rápida no celular.
-                    </li>
-                    <li>
-                      Carrinho com revisão dos itens e montagem automática
-                      da mensagem para envio direto ao atendimento no WhatsApp.
-                    </li>
-                    <li>
-                      Painel administrativo para cadastrar, editar ou remover
-                      itens, com persistência local no navegador.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="projeto-detalhes-bloco">
-                  <h4>Por que essa versão importa</h4>
-                  <ul class="projeto-detalhes-lista">
-                    <li>
-                      Provou a ideia em um contexto real, com foco em rapidez,
-                      clareza e uso mobile.
-                    </li>
-                    <li>
-                      Mostra a primeira estrutura funcional do produto antes da
-                      evolução para a v2.0.
-                    </li>
-                    <li>
-                      Deixa claro como transformo uma necessidade concreta em
-                      solução utilizável e fácil de manter.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="cartao-projeto" data-cartao-projeto>
-            <img
-              src="img/Loading.png"
-              alt="Prévia do próximo projeto"
-              class="projetos-imagem"
-            />
-
-            <div class="caixa-textos-projeto">
-              <div class="projeto-topo">
-                <span class="etiqueta-projeto etiqueta-projeto-futuro"
-                  >Em breve</span
-                >
-                <h3 class="info-projetos">Próximo case aplicado</h3>
-              </div>
-
-              <p class="paragrafo-projetos">
-                Espaço reservado para o próximo projeto que entrar
-                no portfólio com problema real, solução publicada
-                e um recorte técnico mais forte do que cabe hoje nos
-                resumos atuais.
-              </p>
-
-              <ul class="tecnologias-projeto" aria-label="Direção do próximo case">
-                <li>Case aplicado</li>
-                <li>Backend</li>
-                <li>Dados</li>
-                <li>Integração</li>
-              </ul>
-
-              <div class="botoes-projeto">
-                <span class="botao-projeto desabilitado" aria-disabled="true"
-                  >Ver projeto</span
-                >
-                <button
-                  type="button"
-                  class="botao-projeto botao-projeto-secundario"
-                  data-alternar-detalhes-projeto
-                  aria-expanded="false"
-                  aria-controls="detalhes-projeto-futuro"
-                >
-                  Ver detalhes
-                </button>
-              </div>
-
-              <div
-                id="detalhes-projeto-futuro"
-                class="projeto-detalhes"
-                data-detalhes-projeto
-                hidden
-              >
-                <div class="projeto-detalhes-bloco">
-                  <h4>Como quero preencher esse espaço</h4>
-                  <p>
-                    O objetivo aqui não é colocar qualquer projeto,
-                    mas um case com problema claro, solução publicada
-                    e decisões técnicas mais visíveis do que
-                    as que cabem no resumo do card.
-                  </p>
-                </div>
-
-                <div class="projeto-detalhes-bloco">
-                  <h4>O que esse próximo case precisa mostrar</h4>
-                  <ul class="projeto-detalhes-lista">
-                    <li>Fluxo completo, do contexto do problema até a entrega da solução.</li>
-                    <li>Recorte técnico mais forte em backend, dados ou operação real.</li>
-                    <li>Demonstração que mostre resultado, não só interface.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      document.body.classList.add("js-pronto");
-
-      if ("scrollRestoration" in window.history) {
-        window.history.scrollRestoration = "manual";
+      if (menu) {
+        return menu.getBoundingClientRect().bottom + folgaExtra;
       }
 
-      const linksMenu = Array.from(document.querySelectorAll(".menu-atalho"));
-      const secoesMenu = linksMenu
-        .map((atalho) => document.querySelector(atalho.getAttribute("href")))
-        .filter(Boolean);
-      let idMenuTravado = null;
-      let menuTravadoAte = 0;
+      return navegacao
+        ? navegacao.getBoundingClientRect().height + folgaExtra
+        : 0;
+    }
 
-      function obterOffsetNavegacao() {
-        const menu = document.querySelector(".menu");
-        const navegacao = document.querySelector(".navegacao");
-        const folgaExtra = window.matchMedia("(max-width: 767px)").matches
-          ? 4
-          : 5;
+    function obterAlvoNavegacao(secao) {
+      if (!secao || secao.id === "inicio") {
+        return secao;
+      }
 
-        if (menu) {
-          return menu.getBoundingClientRect().bottom + folgaExtra;
+      return secao.querySelector(".sobre-titulo, .projetos-titulo") || secao;
+    }
+
+    function obterDestinoNavegacao(secao) {
+      const alvoNavegacao = obterAlvoNavegacao(secao);
+
+      return Math.max(
+        0,
+        alvoNavegacao.getBoundingClientRect().top +
+        window.scrollY -
+        obterOffsetNavegacao()
+      );
+    }
+
+    function marcarLinkAtivo(idAtivo) {
+      linksMenu.forEach((atalho) => {
+        const estaAtivo = atalho.getAttribute("href") === `#${idAtivo}`;
+        atalho.classList.toggle("esta-ativo", estaAtivo);
+
+        if (estaAtivo) {
+          atalho.setAttribute("aria-current", "page");
+        } else {
+          atalho.removeAttribute("aria-current");
         }
+      });
+    }
 
-        return navegacao
-          ? navegacao.getBoundingClientRect().height + folgaExtra
-          : 0;
+    function resetarVisaoInicial() {
+      if (window.location.hash) {
+        return;
       }
 
-      function obterAlvoNavegacao(secao) {
-        if (!secao || secao.id === "inicio") {
-          return secao;
-        }
+      window.scrollTo(0, 0);
+      marcarLinkAtivo("inicio");
+    }
 
-        return secao.querySelector(".sobre-titulo, .projetos-titulo") || secao;
+    resetarVisaoInicial();
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        resetarVisaoInicial();
       }
+    });
 
-      function obterDestinoNavegacao(secao) {
-        const alvoNavegacao = obterAlvoNavegacao(secao);
+    linksMenu.forEach((atalho) => {
+      atalho.addEventListener("click", (evento) => {
+        const seletorAlvo = atalho.getAttribute("href");
+        const secaoAlvo = document.querySelector(seletorAlvo);
 
-        return Math.max(
-          0,
-          alvoNavegacao.getBoundingClientRect().top +
-            window.scrollY -
-            obterOffsetNavegacao()
-        );
-      }
-
-      function marcarLinkAtivo(idAtivo) {
-        linksMenu.forEach((atalho) => {
-          const estaAtivo = atalho.getAttribute("href") === `#${idAtivo}`;
-          atalho.classList.toggle("esta-ativo", estaAtivo);
-
-          if (estaAtivo) {
-            atalho.setAttribute("aria-current", "page");
-          } else {
-            atalho.removeAttribute("aria-current");
-          }
-        });
-      }
-
-      function resetarVisaoInicial() {
-        if (window.location.hash) {
+        if (!secaoAlvo) {
           return;
         }
 
-        window.scrollTo(0, 0);
-        marcarLinkAtivo("inicio");
+        evento.preventDefault();
+
+        const destino = obterDestinoNavegacao(secaoAlvo);
+
+        idMenuTravado = secaoAlvo.id;
+        menuTravadoAte = performance.now() + 900;
+
+        window.scrollTo({
+          top: destino,
+          behavior: "smooth",
+        });
+
+        marcarLinkAtivo(secaoAlvo.id);
+      });
+    });
+
+    if (secoesMenu.length) {
+      let sincronizacaoPendente = false;
+
+      function obterIdAtivoPorScroll() {
+        const deslocamento = obterOffsetNavegacao() + 18;
+        const posicoes = secoesMenu.map((secao) => ({
+          id: secao.id,
+          top: obterAlvoNavegacao(secao).getBoundingClientRect().top,
+        }));
+        const secoesAtingidas = posicoes.filter(
+          (posicao) => posicao.top <= deslocamento
+        );
+
+        if (secoesAtingidas.length) {
+          return secoesAtingidas.sort((a, b) => b.top - a.top)[0].id;
+        }
+
+        return (
+          posicoes.sort((a, b) => a.top - b.top)[0]?.id ?? secoesMenu[0].id
+        );
       }
 
-      resetarVisaoInicial();
-      window.addEventListener("pageshow", (event) => {
-        if (event.persisted) {
-          resetarVisaoInicial();
+      function sincronizarLinkAtivo() {
+        sincronizacaoPendente = false;
+
+        if (idMenuTravado && performance.now() < menuTravadoAte) {
+          marcarLinkAtivo(idMenuTravado);
+          return;
+        }
+
+        idMenuTravado = null;
+        const idAtivo = obterIdAtivoPorScroll();
+
+        if (idAtivo) {
+          marcarLinkAtivo(idAtivo);
+        }
+      }
+
+      function pedirSincronizacaoMenu() {
+        if (sincronizacaoPendente) {
+          return;
+        }
+
+        sincronizacaoPendente = true;
+        window.requestAnimationFrame(sincronizarLinkAtivo);
+      }
+
+      window.addEventListener("scroll", pedirSincronizacaoMenu, {
+        passive: true,
+      });
+      window.addEventListener("resize", pedirSincronizacaoMenu);
+      pedirSincronizacaoMenu();
+    }
+
+    const botoesDetalhesProjeto = Array.from(
+      document.querySelectorAll("[data-alternar-detalhes-projeto]")
+    );
+
+    function definirEstadoDetalhesProjeto(botao, expandido) {
+      const idPainel = botao.getAttribute("aria-controls");
+      const painel = document.getElementById(idPainel);
+      const cartao = botao.closest("[data-cartao-projeto]");
+
+      if (!painel || !cartao) {
+        return;
+      }
+
+      botao.setAttribute("aria-expanded", String(expandido));
+      botao.textContent = expandido ? "Ocultar detalhes" : "Ver detalhes";
+      painel.hidden = !expandido;
+      cartao.classList.toggle("cartao-projeto--expandido", expandido);
+    }
+
+    function fecharOutrosDetalhesProjeto(botaoAtivo) {
+      botoesDetalhesProjeto.forEach((botao) => {
+        if (botao !== botaoAtivo) {
+          definirEstadoDetalhesProjeto(botao, false);
         }
       });
+    }
 
-      linksMenu.forEach((atalho) => {
-        atalho.addEventListener("click", (evento) => {
-          const seletorAlvo = atalho.getAttribute("href");
-          const secaoAlvo = document.querySelector(seletorAlvo);
+    botoesDetalhesProjeto.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const estaExpandido =
+          botao.getAttribute("aria-expanded") === "true";
 
-          if (!secaoAlvo) {
+        if (estaExpandido) {
+          definirEstadoDetalhesProjeto(botao, false);
+          return;
+        }
+
+        fecharOutrosDetalhesProjeto(botao);
+        definirEstadoDetalhesProjeto(botao, true);
+      });
+    });
+
+    const vitrinesProjetos = Array.from(
+      document.querySelectorAll(".vitrine-projeto")
+    );
+
+    function marcarRotuloVitrine(vitrine, indiceAtivo) {
+      const botoes = Array.from(
+        vitrine.querySelectorAll("[data-ir-para-vitrine]")
+      );
+
+      botoes.forEach((botao, indice) => {
+        const estaAtivo = indice === indiceAtivo;
+
+        botao.classList.toggle("esta-ativo", estaAtivo);
+        botao.setAttribute("aria-pressed", String(estaAtivo));
+      });
+    }
+
+    function obterIndiceVitrineVisivel(cena) {
+      const quadros = Array.from(cena.querySelectorAll(".quadro-vitrine"));
+      const centroCena = cena.getBoundingClientRect().left + cena.clientWidth / 2;
+
+      return quadros.reduce(
+        (melhor, quadro, indice) => {
+          const retangulo = quadro.getBoundingClientRect();
+          const centroQuadro = retangulo.left + retangulo.width / 2;
+          const distancia = Math.abs(centroQuadro - centroCena);
+
+          return distancia < melhor.distancia
+            ? { indice, distancia }
+            : melhor;
+        },
+        { indice: 0, distancia: Number.POSITIVE_INFINITY }
+      ).indice;
+    }
+
+    function configurarControlesVitrine(vitrine) {
+      const cena = vitrine.querySelector(".vitrine-cena-rolavel");
+      const quadros = Array.from(vitrine.querySelectorAll(".quadro-vitrine"));
+      const botoes = Array.from(
+        vitrine.querySelectorAll("[data-ir-para-vitrine]")
+      );
+
+      if (!cena || !quadros.length || !botoes.length) {
+        return;
+      }
+
+      let sincronizacaoPendente = false;
+
+      botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          const indice = Number(botao.dataset.irParaVitrine);
+          const quadro = quadros[indice];
+
+          if (!quadro) {
             return;
           }
 
-          evento.preventDefault();
-
-          const destino = obterDestinoNavegacao(secaoAlvo);
-
-          idMenuTravado = secaoAlvo.id;
-          menuTravadoAte = performance.now() + 900;
-
-          window.scrollTo({
-            top: destino,
+          cena.scrollTo({
+            left: quadro.offsetLeft - cena.offsetLeft,
             behavior: "smooth",
           });
-
-          marcarLinkAtivo(secaoAlvo.id);
+          marcarRotuloVitrine(vitrine, indice);
         });
       });
 
-      if (secoesMenu.length) {
-        let sincronizacaoPendente = false;
-
-        function obterIdAtivoPorScroll() {
-          const deslocamento = obterOffsetNavegacao() + 18;
-          const posicoes = secoesMenu.map((secao) => ({
-            id: secao.id,
-            top: obterAlvoNavegacao(secao).getBoundingClientRect().top,
-          }));
-          const secoesAtingidas = posicoes.filter(
-            (posicao) => posicao.top <= deslocamento
-          );
-
-          if (secoesAtingidas.length) {
-            return secoesAtingidas.sort((a, b) => b.top - a.top)[0].id;
-          }
-
-          return (
-            posicoes.sort((a, b) => a.top - b.top)[0]?.id ?? secoesMenu[0].id
-          );
-        }
-
-        function sincronizarLinkAtivo() {
-          sincronizacaoPendente = false;
-
-          if (idMenuTravado && performance.now() < menuTravadoAte) {
-            marcarLinkAtivo(idMenuTravado);
-            return;
-          }
-
-          idMenuTravado = null;
-          const idAtivo = obterIdAtivoPorScroll();
-
-          if (idAtivo) {
-            marcarLinkAtivo(idAtivo);
-          }
-        }
-
-        function pedirSincronizacaoMenu() {
+      cena.addEventListener(
+        "scroll",
+        () => {
           if (sincronizacaoPendente) {
             return;
           }
 
           sincronizacaoPendente = true;
-          window.requestAnimationFrame(sincronizarLinkAtivo);
-        }
-
-        window.addEventListener("scroll", pedirSincronizacaoMenu, {
-          passive: true,
-        });
-        window.addEventListener("resize", pedirSincronizacaoMenu);
-        pedirSincronizacaoMenu();
-      }
-
-      const botoesDetalhesProjeto = Array.from(
-        document.querySelectorAll("[data-alternar-detalhes-projeto]")
-      );
-
-      function definirEstadoDetalhesProjeto(botao, expandido) {
-        const idPainel = botao.getAttribute("aria-controls");
-        const painel = document.getElementById(idPainel);
-        const cartao = botao.closest("[data-cartao-projeto]");
-
-        if (!painel || !cartao) {
-          return;
-        }
-
-        botao.setAttribute("aria-expanded", String(expandido));
-        botao.textContent = expandido ? "Ocultar detalhes" : "Ver detalhes";
-        painel.hidden = !expandido;
-        cartao.classList.toggle("cartao-projeto--expandido", expandido);
-      }
-
-      function fecharOutrosDetalhesProjeto(botaoAtivo) {
-        botoesDetalhesProjeto.forEach((botao) => {
-          if (botao !== botaoAtivo) {
-            definirEstadoDetalhesProjeto(botao, false);
-          }
-        });
-      }
-
-      botoesDetalhesProjeto.forEach((botao) => {
-        botao.addEventListener("click", () => {
-          const estaExpandido =
-            botao.getAttribute("aria-expanded") === "true";
-
-          if (estaExpandido) {
-            definirEstadoDetalhesProjeto(botao, false);
-            return;
-          }
-
-          fecharOutrosDetalhesProjeto(botao);
-          definirEstadoDetalhesProjeto(botao, true);
-        });
-      });
-
-      const vitrinesProjetos = Array.from(
-        document.querySelectorAll(".vitrine-projeto")
-      );
-
-      function marcarRotuloVitrine(vitrine, indiceAtivo) {
-        const botoes = Array.from(
-          vitrine.querySelectorAll("[data-ir-para-vitrine]")
-        );
-
-        botoes.forEach((botao, indice) => {
-          const estaAtivo = indice === indiceAtivo;
-
-          botao.classList.toggle("esta-ativo", estaAtivo);
-          botao.setAttribute("aria-pressed", String(estaAtivo));
-        });
-      }
-
-      function obterIndiceVitrineVisivel(cena) {
-        const quadros = Array.from(cena.querySelectorAll(".quadro-vitrine"));
-        const centroCena = cena.getBoundingClientRect().left + cena.clientWidth / 2;
-
-        return quadros.reduce(
-          (melhor, quadro, indice) => {
-            const retangulo = quadro.getBoundingClientRect();
-            const centroQuadro = retangulo.left + retangulo.width / 2;
-            const distancia = Math.abs(centroQuadro - centroCena);
-
-            return distancia < melhor.distancia
-              ? { indice, distancia }
-              : melhor;
-          },
-          { indice: 0, distancia: Number.POSITIVE_INFINITY }
-        ).indice;
-      }
-
-      function configurarControlesVitrine(vitrine) {
-        const cena = vitrine.querySelector(".vitrine-cena-rolavel");
-        const quadros = Array.from(vitrine.querySelectorAll(".quadro-vitrine"));
-        const botoes = Array.from(
-          vitrine.querySelectorAll("[data-ir-para-vitrine]")
-        );
-
-        if (!cena || !quadros.length || !botoes.length) {
-          return;
-        }
-
-        let sincronizacaoPendente = false;
-
-        botoes.forEach((botao) => {
-          botao.addEventListener("click", () => {
-            const indice = Number(botao.dataset.irParaVitrine);
-            const quadro = quadros[indice];
-
-            if (!quadro) {
-              return;
-            }
-
-            cena.scrollTo({
-              left: quadro.offsetLeft - cena.offsetLeft,
-              behavior: "smooth",
-            });
-            marcarRotuloVitrine(vitrine, indice);
+          window.requestAnimationFrame(() => {
+            sincronizacaoPendente = false;
+            marcarRotuloVitrine(vitrine, obterIndiceVitrineVisivel(cena));
           });
-        });
+        },
+        { passive: true }
+      );
+    }
 
-        cena.addEventListener(
-          "scroll",
-          () => {
-            if (sincronizacaoPendente) {
-              return;
-            }
+    vitrinesProjetos.forEach(configurarControlesVitrine);
+  </script>
+</body>
 
-            sincronizacaoPendente = true;
-            window.requestAnimationFrame(() => {
-              sincronizacaoPendente = false;
-              marcarRotuloVitrine(vitrine, obterIndiceVitrineVisivel(cena));
-            });
-          },
-          { passive: true }
-        );
-      }
-
-      vitrinesProjetos.forEach(configurarControlesVitrine);
-    </script>
-  </body>
 </html>
