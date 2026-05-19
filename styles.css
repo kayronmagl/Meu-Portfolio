@@ -436,13 +436,21 @@ h1 {
   z-index: 1;
 }
 
+.quadro-vitrine-tablet {
+  right: 3.15rem;
+  bottom: 0.72rem;
+  width: clamp(7.8rem, 10.6vw, 9.4rem);
+  aspect-ratio: 16 / 9;
+  z-index: 2;
+}
+
 .quadro-vitrine-mobile {
   top: auto;
   right: 0;
   bottom: 0;
   width: clamp(8.4rem, 11.8vw, 10.5rem);
   aspect-ratio: 16 / 9;
-  z-index: 2;
+  z-index: 3;
 }
 
 .imagem-vitrine {
@@ -452,6 +460,20 @@ h1 {
   object-fit: cover;
   object-position: center top;
   filter: saturate(0.94) contrast(1.02);
+}
+
+.vitrine-cena-v2 .quadro-vitrine-tablet {
+  right: 4rem;
+  bottom: 0.92rem;
+  width: clamp(8.2rem, 10.9vw, 9.8rem);
+  z-index: 2;
+}
+
+.vitrine-cena-v2 .quadro-vitrine-mobile {
+  right: 0;
+  bottom: 0.08rem;
+  width: clamp(7.2rem, 9.6vw, 8.7rem);
+  z-index: 3;
 }
 
 .projetos-imagem {
@@ -840,6 +862,14 @@ h1 {
     gap: 0.78rem;
   }
 
+  .vitrine-cena-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "pc pc"
+      "tablet mobile";
+    align-items: start;
+  }
+
   .quadro-vitrine {
     position: relative;
     inset: auto;
@@ -850,9 +880,26 @@ h1 {
     aspect-ratio: 16 / 9;
   }
 
+  .vitrine-cena-v2 .quadro-vitrine-pc {
+    grid-area: pc;
+  }
+
+  .quadro-vitrine-tablet {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .vitrine-cena-v2 .quadro-vitrine-tablet {
+    grid-area: tablet;
+  }
+
   .quadro-vitrine-mobile {
     width: 100%;
     aspect-ratio: 16 / 9;
+  }
+
+  .vitrine-cena-v2 .quadro-vitrine-mobile {
+    grid-area: mobile;
   }
 
   .botoes-projeto {
