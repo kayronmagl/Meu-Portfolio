@@ -399,6 +399,18 @@ h1 {
   min-height: clamp(176px, 16vw, 204px);
 }
 
+.vitrine-cena-v2 {
+  position: static;
+  min-height: 0;
+  display: grid;
+  gap: 0.78rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "pc pc"
+    "tablet mobile";
+  align-items: start;
+}
+
 .quadro-vitrine {
   margin: 0;
   position: absolute;
@@ -436,14 +448,6 @@ h1 {
   z-index: 1;
 }
 
-.quadro-vitrine-tablet {
-  right: 3.15rem;
-  bottom: 0.72rem;
-  width: clamp(7.8rem, 10.6vw, 9.4rem);
-  aspect-ratio: 16 / 9;
-  z-index: 2;
-}
-
 .quadro-vitrine-mobile {
   top: auto;
   right: 0;
@@ -462,18 +466,25 @@ h1 {
   filter: saturate(0.94) contrast(1.02);
 }
 
+.vitrine-cena-v2 .quadro-vitrine {
+  position: relative;
+  inset: auto;
+  width: 100%;
+}
+
+.vitrine-cena-v2 .quadro-vitrine-pc {
+  grid-area: pc;
+  aspect-ratio: 16 / 9;
+}
+
 .vitrine-cena-v2 .quadro-vitrine-tablet {
-  right: 4rem;
-  bottom: 0.92rem;
-  width: clamp(8.2rem, 10.9vw, 9.8rem);
-  z-index: 2;
+  grid-area: tablet;
+  aspect-ratio: 16 / 9;
 }
 
 .vitrine-cena-v2 .quadro-vitrine-mobile {
-  right: 0;
-  bottom: 0.08rem;
-  width: clamp(7.2rem, 9.6vw, 8.7rem);
-  z-index: 3;
+  grid-area: mobile;
+  aspect-ratio: 16 / 9;
 }
 
 .projetos-imagem {
@@ -862,14 +873,6 @@ h1 {
     gap: 0.78rem;
   }
 
-  .vitrine-cena-v2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "pc pc"
-      "tablet mobile";
-    align-items: start;
-  }
-
   .quadro-vitrine {
     position: relative;
     inset: auto;
@@ -884,18 +887,8 @@ h1 {
     grid-area: pc;
   }
 
-  .quadro-vitrine-tablet {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-
   .vitrine-cena-v2 .quadro-vitrine-tablet {
     grid-area: tablet;
-  }
-
-  .quadro-vitrine-mobile {
-    width: 100%;
-    aspect-ratio: 16 / 9;
   }
 
   .vitrine-cena-v2 .quadro-vitrine-mobile {
