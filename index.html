@@ -75,7 +75,7 @@
       </p>
 
       <div class="projetos-caixa">
-        <article class="cartao-projeto" data-cartao-projeto>
+        <article class="cartao-projeto cartao-projeto-futuro" data-cartao-projeto>
           <div class="vitrine-projeto" aria-label="Capturas do Cardápio Digital v2.0">
             <div class="vitrine-cena vitrine-cena-v2 vitrine-cena-rolavel">
               <figure class="quadro-vitrine quadro-vitrine-pc">
@@ -380,8 +380,15 @@
     const secoesMenu = linksMenu
       .map((atalho) => document.querySelector(atalho.getAttribute("href")))
       .filter(Boolean);
+    const consultaMovimentoReduzido = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
     let idMenuTravado = null;
     let menuTravadoAte = 0;
+
+    function obterComportamentoRolagem() {
+      return consultaMovimentoReduzido.matches ? "auto" : "smooth";
+    }
 
     function obterOffsetNavegacao() {
       const menu = document.querySelector(".menu");
@@ -461,11 +468,12 @@
         const destino = obterDestinoNavegacao(secaoAlvo);
 
         idMenuTravado = secaoAlvo.id;
-        menuTravadoAte = performance.now() + 900;
+        menuTravadoAte = performance.now() +
+          (consultaMovimentoReduzido.matches ? 0 : 900);
 
         window.scrollTo({
           top: destino,
-          behavior: "smooth",
+          behavior: obterComportamentoRolagem(),
         });
 
         marcarLinkAtivo(secaoAlvo.id);
@@ -571,6 +579,7 @@
     const vitrinesProjetos = Array.from(
       document.querySelectorAll(".vitrine-projeto")
     );
+    const consultaMobileVitrine = window.matchMedia("(max-width: 767px)");
 
     function marcarRotuloVitrine(vitrine, indiceAtivo) {
       const botoes = Array.from(
@@ -616,8 +625,32 @@
 
       let sincronizacaoPendente = false;
 
+      function atualizarInteracaoRotulos() {
+        const ehMobile = consultaMobileVitrine.matches;
+
+        botoes.forEach((botao) => {
+          if (ehMobile) {
+            botao.removeAttribute("aria-disabled");
+            botao.removeAttribute("tabindex");
+            return;
+          }
+
+          botao.setAttribute("aria-disabled", "true");
+          botao.setAttribute("tabindex", "-1");
+        });
+
+        if (!ehMobile) {
+          marcarRotuloVitrine(vitrine, 0);
+        }
+      }
+
       botoes.forEach((botao) => {
-        botao.addEventListener("click", () => {
+        botao.addEventListener("click", (evento) => {
+          if (!consultaMobileVitrine.matches) {
+            evento.preventDefault();
+            return;
+          }
+
           const indice = Number(botao.dataset.irParaVitrine);
           const quadro = quadros[indice];
 
@@ -627,7 +660,7 @@
 
           cena.scrollTo({
             left: quadro.offsetLeft - cena.offsetLeft,
-            behavior: "smooth",
+            behavior: obterComportamentoRolagem(),
           });
           marcarRotuloVitrine(vitrine, indice);
         });
@@ -648,6 +681,9 @@
         },
         { passive: true }
       );
+
+      atualizarInteracaoRotulos();
+      consultaMobileVitrine.addEventListener("change", atualizarInteracaoRotulos);
     }
 
     vitrinesProjetos.forEach(configurarControlesVitrine);
