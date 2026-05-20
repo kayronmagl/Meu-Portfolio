@@ -327,11 +327,13 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: min(14rem, 54%);
+  right: 0;
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(216, 210, 200, 0.28),
+    rgba(216, 210, 200, 0),
+    rgba(216, 210, 200, 0.3),
+    rgba(216, 210, 200, 0.18),
     rgba(216, 210, 200, 0)
   );
 }
@@ -398,6 +400,7 @@ h1 {
 
 .vitrine-projeto {
   padding: clamp(0.9rem, 2vw, 1.15rem);
+  padding-bottom: clamp(0.7rem, 1.4vw, 0.84rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
@@ -409,7 +412,8 @@ h1 {
   min-height: clamp(176px, 16vw, 204px);
 }
 
-.vitrine-cena-v2 {
+.vitrine-cena-v2,
+.vitrine-cena-v1 {
   position: static;
   min-height: 0;
   display: grid;
@@ -437,8 +441,10 @@ h1 {
 
 .rotulos-vitrine {
   display: inline-flex;
+  width: 100%;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0;
   margin-top: 0.62rem;
   color: rgba(243, 239, 230, 0.56);
@@ -495,23 +501,27 @@ h1 {
   filter: saturate(0.94) contrast(1.02);
 }
 
-.vitrine-cena-v2 .quadro-vitrine {
+.vitrine-cena-v2 .quadro-vitrine,
+.vitrine-cena-v1 .quadro-vitrine {
   position: relative;
   inset: auto;
   width: 100%;
 }
 
-.vitrine-cena-v2 .quadro-vitrine-pc {
+.vitrine-cena-v2 .quadro-vitrine-pc,
+.vitrine-cena-v1 .quadro-vitrine-pc {
   grid-area: pc;
   aspect-ratio: 16 / 9;
 }
 
-.vitrine-cena-v2 .quadro-vitrine-tablet {
+.vitrine-cena-v2 .quadro-vitrine-tablet,
+.vitrine-cena-v1 .quadro-vitrine-tablet {
   grid-area: tablet;
   aspect-ratio: 16 / 9;
 }
 
-.vitrine-cena-v2 .quadro-vitrine-mobile {
+.vitrine-cena-v2 .quadro-vitrine-mobile,
+.vitrine-cena-v1 .quadro-vitrine-mobile {
   grid-area: mobile;
   aspect-ratio: 16 / 9;
 }
@@ -530,14 +540,14 @@ h1 {
   padding: clamp(1.05rem, 2vw, 1.3rem);
   display: flex;
   flex-direction: column;
-  gap: 0.98rem;
+  gap: 0.82rem;
   flex: 1;
 }
 
 .projeto-topo {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.64rem;
 }
 
 .etiqueta-projeto {
@@ -570,7 +580,12 @@ h1 {
 
 .info-projetos {
   font-size: clamp(1.25rem, 1.8vw, 1.45rem);
-  line-height: 1.25;
+  line-height: 1.18;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+  text-wrap: pretty;
 }
 
 .paragrafo-projetos {
@@ -762,10 +777,6 @@ h1 {
     max-width: 35rem;
   }
 
-  .info-projetos {
-    min-height: 3.7rem;
-  }
-
   .projetos-caixa {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -869,10 +880,6 @@ h1 {
     padding-top: 0.9rem;
   }
 
-  .sobre-biografia > * + *::before {
-    width: min(10rem, 58%);
-  }
-
   .particulas {
     display: block;
     opacity: 0.34;
@@ -883,7 +890,7 @@ h1 {
   }
 
   .vitrine-projeto {
-    padding: 0.88rem 0.88rem 0.96rem;
+    padding: 0.88rem 0.88rem 0.78rem;
   }
 
   .vitrine-cena {
@@ -923,6 +930,7 @@ h1 {
 
   .rotulos-vitrine {
     width: 100%;
+    justify-content: center;
     margin-top: 0.56rem;
     gap: 0.4rem;
     font-size: 0.66rem;
