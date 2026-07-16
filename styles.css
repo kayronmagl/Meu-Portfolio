@@ -23,6 +23,57 @@
   --deslocamento-nav: clamp(1rem, 2vw, 1.25rem);
 }
 
+/* ANIMAÇÃO | Os efeitos de entrada aparecem quando a seção chega perto da tela. Isso deixa a página mais viva sem usar animações pesadas. A logica da animacao deixa a entrada visual mais suave, mas usa opacidade e transform para ser leve no celular e no computador. */
+/* ANIMAÇÃO | Antes de aparecer, o bloco fica invisível e um pouco mais baixo. Quando o JS adiciona esta-visivel, ele sobe e fica visível. A logica da animacao deixa a entrada visual mais suave, mas usa opacidade e transform para ser leve no celular e no computador. */
+.reveal-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.reveal-scroll.esta-visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARD | O reveal dos projetos acontece dentro do card, não no card inteiro. Assim o card ainda consegue subir no hover sem uma animação brigar com a outra. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
+.cartao-projeto-reveal {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* FERRAMENTAS | Esses itens são links de referência visual. No hover, eles sobem um pouco para mostrar que são clicáveis, mas sem mudar o tamanho da lista. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
+.ferramentas-lista-referencias li {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.ferramentas-lista-referencias li:hover,
+.ferramentas-lista-referencias li:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(216, 210, 200, 0.28);
+  background:
+    linear-gradient(180deg, rgba(216, 210, 200, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.05);
+}
+
+.ferramentas-lista-referencias a {
+  transition: color 180ms ease;
+}
+
+.ferramentas-lista-referencias li:hover a,
+.ferramentas-lista-referencias li:focus-within a {
+  color: var(--acao);
+}
+
+
+
+/* BASE | Aqui fica o comportamento geral da página. O fundo fica escuro, o texto fica claro e qualquer sobra horizontal é escondida para não criar barra lateral. A logica base controla largura, cor, respiro e ritmo para as secoes seguirem o mesmo padrao sem repetir regras em todo lugar. */
 body {
   background-color: var(--escuro);
   color: var(--claro);
@@ -30,11 +81,13 @@ body {
   overflow-x: hidden;
 }
 
+/* BASE | Esse limite impede que o conteúdo fique largo demais no desktop e grudado nas bordas no celular. Ele centraliza as seções e mantém respiro lateral. A logica base controla largura, cor, respiro e ritmo para as secoes seguirem o mesmo padrao sem repetir regras em todo lugar. */
 .secao-limite {
   width: min(1120px, calc(100% - clamp(1.25rem, 4vw, 2.5rem)));
   margin: 0 auto;
 }
 
+/* MENU | A navegação fica fixa no topo enquanto o usuario rola. O clique começa bloqueado e só libera quando o JS marca o body como pronto. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
 .navegacao {
   position: fixed;
   top: 0;
@@ -51,6 +104,7 @@ body.js-pronto .navegacao {
   pointer-events: auto;
 }
 
+/* MENU | A lista vira uma barra com quatro espaços iguais. Assim Início, Sobre mim, Ferramentas e Projetos ficam alinhados e com largura parecida. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
 .menu {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -71,6 +125,7 @@ body.js-pronto .navegacao {
   -webkit-backdrop-filter: blur(24px) saturate(120%);
 }
 
+/* MENU | O ::before cria uma camada extra dentro do menu para fazer o brilho de vidro. O content vazio existe só para essa camada aparecer, sem texto. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
 .menu::before {
   content: "";
   position: absolute;
@@ -119,6 +174,7 @@ body.js-pronto .navegacao {
   display: none;
 }
 
+/* MENU | Quando passa o mouse ou navega pelo teclado, o link clareia. Isso mostra qual item está recebendo interação naquele momento. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
 .menu-atalho:hover,
 .menu-atalho:focus-visible {
   background: rgba(255, 255, 255, 0.06);
@@ -126,6 +182,7 @@ body.js-pronto .navegacao {
   opacity: 1;
 }
 
+/* MENU | O link ativo fica com fundo claro e texto escuro. Isso ajuda o usuario a saber qual seção do portfólio está aparecendo agora. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
 .menu-atalho.esta-ativo,
 .menu-atalho[aria-current="page"] {
   background: linear-gradient(135deg, var(--acao), var(--acao-secundaria));
@@ -134,6 +191,7 @@ body.js-pronto .navegacao {
   opacity: 1;
 }
 
+/* CABEÇALHO | A primeira tela apresenta logo, nome, frase e Linktree. Ela ocupa quase toda a altura para dar foco na apresentação inicial. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho {
   min-height: 100svh;
   padding: clamp(6.1rem, 10vw, 7.2rem) 1.5rem clamp(3.25rem, 6vw, 4.5rem);
@@ -144,6 +202,7 @@ body.js-pronto .navegacao {
   text-align: center;
 }
 
+/* CARD | Sobre, ferramentas e projetos usam a mesma base visual de vidro. O ::before cria uma linha fina de brilho no topo para dar acabamento. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .sobre-caixa,
 .ferramentas-grupo,
 .cartao-projeto {
@@ -171,6 +230,7 @@ body.js-pronto .navegacao {
   pointer-events: none;
 }
 
+/* CABEÇALHO | O painel empilha logo, nome, frase e botão. O gap controla o respiro entre eles para o topo não parecer apertado. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-painel {
   width: min(100%, 36rem);
   padding: 0;
@@ -180,6 +240,7 @@ body.js-pronto .navegacao {
   gap: clamp(0.72rem, 1.5vw, 1rem);
 }
 
+/* CABEÇALHO | A logo mantém proporção quadrada, cresce pouco no desktop e não deforma mesmo mudando o tamanho da tela. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .logo-pessoal {
   display: block;
   width: clamp(104px, 12vw, 132px);
@@ -190,6 +251,7 @@ body.js-pronto .navegacao {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* CABEÇALHO | O h1 é o nome principal do portfólio. O tamanho responsivo deixa forte no desktop e ainda legível no celular. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 h1 {
   font-size: clamp(2.55rem, 5.8vw, 3.75rem);
   color: var(--claro);
@@ -200,6 +262,7 @@ h1 {
   text-wrap: balance;
 }
 
+/* CABEÇALHO | A frase abaixo do nome tem largura limitada. Isso evita uma linha muito longa e deixa a leitura mais confortável. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-sub-titulo {
   max-width: 31rem;
   font-size: clamp(1rem, 1.65vw, 1.13rem);
@@ -208,6 +271,7 @@ h1 {
   text-wrap: balance;
 }
 
+/* CABEÇALHO | A área de ações segura o botão do Linktree e mantém ele centralizado abaixo da frase. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-acoes {
   display: flex;
   justify-content: center;
@@ -215,6 +279,7 @@ h1 {
   margin-top: 0.58rem;
 }
 
+/* CABEÇALHO | O link do Linktree vira um botão redondo com efeito de vidro. O ícone fica centralizado para parecer um botão de ação principal. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-acao-linktree {
   display: inline-flex;
   align-items: center;
@@ -238,6 +303,7 @@ h1 {
     color 0.25s ease;
 }
 
+/* CABEÇALHO | No hover ou foco, o botão sobe levemente e muda a cor do ícone. Isso mostra que ele pode ser clicado. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-acao-linktree:hover,
 .cabecalho-acao-linktree:focus-visible {
   transform: translateY(-2px);
@@ -263,6 +329,7 @@ h1 {
   padding: var(--espaco-secao) 0;
 }
 
+/* BASE | Os títulos Sobre mim, Ferramentas e Projetos usam a mesma base. Isso mantém ritmo visual entre as seções. A logica base controla largura, cor, respiro e ritmo para as secoes seguirem o mesmo padrao sem repetir regras em todo lugar. */
 .sobre-titulo,
 .ferramentas-titulo,
 .projetos-titulo {
@@ -272,6 +339,7 @@ h1 {
   margin-bottom: clamp(1rem, 2vw, 1.4rem);
 }
 
+/* SOBRE | O título do Sobre acompanha a largura da caixa abaixo. Assim o começo da seção fica alinhado e fácil de escanear. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-titulo {
   max-width: 42rem;
   margin: 0 auto 0.72rem;
@@ -286,6 +354,7 @@ h1 {
   padding-left: 0.1rem;
 }
 
+/* SOBRE | A caixa da biografia destaca seu texto sem virar um bloco pesado. O fundo escuro com brilho leve combina com o resto do layout. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-caixa {
   max-width: 42rem;
   margin: 0 auto;
@@ -297,6 +366,7 @@ h1 {
     rgba(25, 28, 34, 0.84);
 }
 
+/* SOBRE | Essa linha no final da caixa cria acabamento visual e ajuda a separar a biografia do fundo da página. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-caixa::after {
   content: "";
   position: absolute;
@@ -313,18 +383,21 @@ h1 {
   pointer-events: none;
 }
 
+/* SOBRE | A biografia fica dividida em blocos. A abertura aparece primeiro, depois entram os parágrafos que explicam melhor sua atuação. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-biografia {
   display: grid;
   gap: 0;
   position: relative;
 }
 
+/* SOBRE | O espaço entre os blocos evita que a frase principal e os textos seguintes fiquem colados. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-biografia > * + * {
   margin-top: clamp(1.05rem, 2vw, 1.26rem);
   padding-top: clamp(1.05rem, 2vw, 1.26rem);
   position: relative;
 }
 
+/* SOBRE | A linha divisória mostra onde acaba a apresentação curta e começa a explicação mais completa. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-biografia > * + *::before {
   content: "";
   position: absolute;
@@ -353,6 +426,7 @@ h1 {
   gap: 1rem;
 }
 
+/* SOBRE | A primeira frase recebe fonte maior e peso forte porque ela resume quem você é logo no início da seção. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
 .sobre-abertura {
   max-width: 34rem;
   font-size: clamp(1.2rem, 1.75vw, 1.5rem);
@@ -373,6 +447,7 @@ h1 {
   padding: var(--espaco-secao) 0;
 }
 
+/* FERRAMENTAS | O título fica alinhado com o texto e com os cards. Isso deixa a seção organizada quando o usuario começa a ler. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
 .ferramentas-titulo {
   max-width: 40rem;
   margin: 0 0 0.36rem;
@@ -380,6 +455,7 @@ h1 {
   text-align: left;
 }
 
+/* FERRAMENTAS | O texto de abertura explica como você usa as tecnologias. A largura menor melhora leitura e evita linhas compridas. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
 .ferramentas-abertura {
   max-width: 40rem;
   margin: 0 0 clamp(1.1rem, 2.2vw, 1.5rem);
@@ -390,6 +466,7 @@ h1 {
   text-align: left;
 }
 
+/* FERRAMENTAS | A grade separa frontend, cloud e processo em cards diferentes. No desktop, isso facilita comparar os grupos lado a lado. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
 .ferramentas-grade {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -397,6 +474,7 @@ h1 {
   gap: clamp(0.9rem, 1.6vw, 1.1rem);
 }
 
+/* FERRAMENTAS | Cada grupo de tecnologia vira um card com fundo de vidro. Isso separa os assuntos sem fugir do visual do site. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
 .ferramentas-grupo {
   padding: clamp(1rem, 1.8vw, 1.18rem);
   background:
@@ -425,6 +503,7 @@ h1 {
   list-style: none;
 }
 
+/* FERRAMENTAS | Dentro do card de processo, os subgrupos precisam respirar. Esse espaço separa organização/testes das referências visuais. A logica das ferramentas agrupa tecnologias por assunto para o usuario comparar rapidamente o que entra em interface, cloud e processo. */
 .ferramentas-subgrupo {
   margin-top: 0.9rem;
 }
@@ -488,6 +567,7 @@ h1 {
   padding: var(--espaco-secao) 0;
 }
 
+/* PROJETOS | Esse texto prepara o usuario antes dos cards. Ele explica a ideia da seção sem competir com os projetos. A logica dos projetos prepara a leitura antes dos cards e organiza a area para os cases aparecerem em ordem facil de escanear. */
 .projetos-abertura {
   max-width: 40rem;
   margin: 0 0 clamp(1rem, 2vw, 1.42rem);
@@ -497,12 +577,14 @@ h1 {
   line-height: 1.7;
 }
 
+/* PROJETOS | A caixa dos projetos controla o espaçamento entre cards. Em telas maiores, ela também permite distribuir os cards em colunas. A logica dos projetos prepara a leitura antes dos cards e organiza a area para os cases aparecerem em ordem facil de escanear. */
 .projetos-caixa {
   display: grid;
   gap: 1.4rem;
   align-items: start;
 }
 
+/* CARD | O card do projeto reúne print, descrição, tecnologias e botões. Aqui ficam fundo, sombra, borda e transição para ele parecer uma peça única. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .cartao-projeto {
   display: flex;
   flex-direction: column;
@@ -519,6 +601,7 @@ h1 {
     box-shadow 0.35s ease;
 }
 
+/* CARD | Quando passa o mouse, o card sobe só um pouco e ganha sombra. Isso dá resposta visual sem deixar o layout pulando demais. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .cartao-projeto:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.14);
@@ -537,6 +620,7 @@ h1 {
     rgba(22, 25, 31, 0.72);
 }
 
+/* VITRINE | A vitrine é a parte de cima do card. Ela segura os prints do projeto e separa a imagem dos textos. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .vitrine-projeto {
   padding: clamp(0.82rem, 1.7vw, 1.02rem);
   padding-bottom: clamp(0.7rem, 1.4vw, 0.84rem);
@@ -546,11 +630,13 @@ h1 {
     rgba(255, 255, 255, 0.008);
 }
 
+/* VITRINE | A área dos prints tem altura mínima para o card não ficar mudando de tamanho enquanto as imagens carregam. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .vitrine-cena {
   position: relative;
   min-height: clamp(176px, 16vw, 204px);
 }
 
+/* VITRINE | No desktop, os prints cabem juntos. Por isso eles viram um mosaico, com PC ocupando a linha de cima e tablet/celular embaixo. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .vitrine-cena-v2,
 .vitrine-cena-v1 {
   position: static;
@@ -564,6 +650,7 @@ h1 {
   align-items: start;
 }
 
+/* VITRINE | Cada quadro funciona como uma moldura do print. Ele arredonda a imagem e corta qualquer parte que passar da borda. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .quadro-vitrine {
   margin: 0;
   position: absolute;
@@ -599,6 +686,7 @@ h1 {
   line-height: 1;
 }
 
+/* VITRINE | No desktop, os três prints já aparecem juntos. Por isso Desktop, Tablet e Mobile ficam como legenda discreta, não como botão. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .rotulo-vitrine-botao {
   appearance: none;
   border: 0;
@@ -616,6 +704,7 @@ h1 {
   pointer-events: none;
 }
 
+/* VITRINE | A bolinha separa os rótulos visualmente. Ela ajuda a ler Desktop, Tablet e Mobile sem criar botões grandes no desktop. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .rotulo-vitrine-botao + .rotulo-vitrine-botao::before {
   content: "";
   width: 3px;
@@ -652,6 +741,7 @@ h1 {
   filter: saturate(0.96) contrast(1.035) brightness(0.97);
 }
 
+/* VITRINE | A lupa fica no canto do print para indicar que a imagem pode ser ampliada sem ocupar espaço fora da moldura. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .botao-ampliar-vitrine {
   appearance: none;
   position: absolute;
@@ -698,6 +788,7 @@ h1 {
   fill: currentColor;
 }
 
+/* VITRINE | Em PC, a lupa começa discreta para não poluir os prints. Quando o mouse chega no print, ela aparece melhor. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 @media (hover: hover) and (pointer: fine) {
   .botao-ampliar-vitrine {
     opacity: 0.36;
@@ -716,6 +807,7 @@ h1 {
   }
 }
 
+/* VITRINE | Depois que a cena vira grid, cada print recebe sua área. Isso coloca PC, tablet e celular exatamente no lugar planejado. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
 .vitrine-cena-v2 .quadro-vitrine,
 .vitrine-cena-v1 .quadro-vitrine {
   position: relative;
@@ -751,12 +843,14 @@ h1 {
   filter: saturate(0.92) contrast(1.03);
 }
 
+/* CARD | O projeto futuro ainda não é um case real. Por isso o card fica mais apagado, parecendo espaço reservado. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .cartao-projeto-futuro .projetos-imagem {
   height: clamp(176px, 20vw, 196px);
   opacity: 0.34;
   filter: saturate(0.32) contrast(0.94) brightness(0.86);
 }
 
+/* CARD | A caixa de textos organiza o conteúdo do projeto em ordem: status, título, descrição, tecnologias e botões. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .caixa-textos-projeto {
   padding: clamp(1.08rem, 2vw, 1.32rem);
   padding-top: clamp(1.18rem, 2.2vw, 1.42rem);
@@ -766,12 +860,14 @@ h1 {
   flex: 1;
 }
 
+/* CARD | A etiqueta e o título ficam juntos no topo para o usuario entender rápido o status e o nome do projeto. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .projeto-topo {
   display: flex;
   flex-direction: column;
   gap: 0.52rem;
 }
 
+/* CARD | As etiquetas são pílulas pequenas que mostram o status do projeto, como Atual, Primeira versão ou Em breve. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .etiqueta-projeto {
   width: fit-content;
   display: inline-flex;
@@ -816,6 +912,7 @@ h1 {
   line-height: 1.62;
 }
 
+/* CARD | As tecnologias viram pílulas para o usuario bater o olho e entender a stack sem ler um parágrafo. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .tecnologias-projeto {
   display: flex;
   flex-wrap: wrap;
@@ -842,6 +939,7 @@ h1 {
   text-align: center;
 }
 
+/* CARD | Os botões entram em grade para alinhar Ver projeto, Ver código e Ver detalhes sem tamanhos estranhos. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .botoes-projeto {
   margin-top: auto;
   display: grid;
@@ -850,6 +948,7 @@ h1 {
   padding-top: 0.24rem;
 }
 
+/* CARD | Quando existem dois links principais, Ver detalhes desce para uma linha inteira. Isso evita três botões apertados. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .botoes-projeto-com-codigo {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -862,6 +961,7 @@ h1 {
   grid-template-columns: 1fr;
 }
 
+/* CARD | Os botões dos projetos ficam com altura fixa, borda arredondada e texto centralizado para parecerem consistentes. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .botao-projeto {
   display: inline-flex;
   align-items: center;
@@ -914,6 +1014,7 @@ h1 {
   cursor: not-allowed;
 }
 
+/* CARD | Essa área guarda os textos longos do projeto. Ela fica escondida até o usuario clicar em Ver detalhes. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .projeto-detalhes {
   margin-top: 0.25rem;
   padding-top: 1rem;
@@ -930,6 +1031,7 @@ h1 {
   margin-top: 0;
 }
 
+/* CARD | Cada parte dos detalhes fica dentro de uma caixinha própria. Isso separa problema, solução e contribuição sem misturar tudo. A logica do card junta imagem, status, textos, tecnologias e acoes em uma peca unica para cada projeto ser entendido sem procurar informacao espalhada. */
 .projeto-detalhes-bloco {
   padding: 0.95rem 1rem;
   border-radius: 14px;
@@ -963,6 +1065,7 @@ body.ampliacao-vitrine-aberta {
   overflow: hidden;
 }
 
+/* MODAL | Quando um print é ampliado, essa camada cobre a página com fundo escuro para focar só na imagem. A logica do modal coloca a imagem ampliada acima da pagina, prende o foco visual e devolve o usuario ao ponto anterior quando fecha. */
 .ampliacao-vitrine {
   position: fixed;
   inset: 0;
@@ -1003,6 +1106,7 @@ body.ampliacao-vitrine-aberta {
   overflow: hidden;
 }
 
+/* MODAL | A imagem ampliada usa contain para caber dentro da tela. Assim o print aparece inteiro, sem cortar topo, laterais ou rodapé. A logica do modal coloca a imagem ampliada acima da pagina, prende o foco visual e devolve o usuario ao ponto anterior quando fecha. */
 .ampliacao-vitrine-imagem {
   width: 100%;
   max-height: calc(min(86svh, 820px) - 4.2rem);
@@ -1084,6 +1188,7 @@ body.ampliacao-vitrine-aberta {
     var(--maisEscuro);
 }
 
+/* RESPONSIVO | Em tablet para cima existe mais largura disponível. Esses ajustes aumentam respiro e começam a dividir cards em colunas. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (min-width: 768px) {
   .navegacao {
     padding: 0.78rem 0.78rem 0.22rem;
@@ -1162,6 +1267,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* RESPONSIVO | Em desktop largo, os cards têm espaço suficiente para três colunas. Isso mostra mais conteúdo sem deixar cada card espremido. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (min-width: 1100px) {
   .menu {
     width: min(calc(100% - 1.5rem), 29rem);
@@ -1204,6 +1310,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* RESPONSIVO | No celular, a tela é estreita e o toque precisa ser confortável. Por isso o menu, espaços e vitrine ficam mais compactos. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (max-width: 767px) {
   .sobre-titulo {
     margin-bottom: 0.82rem;
@@ -1294,6 +1401,7 @@ body.ampliacao-vitrine-aberta {
     padding: 0.88rem 0.88rem 0.78rem;
   }
 
+  /* RESPONSIVO | No celular, os prints não cabem bem em mosaico. Então eles viram uma fila horizontal, onde o usuario desliza para ver cada versão. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
   .vitrine-cena {
     position: static;
     min-height: 0;
@@ -1346,6 +1454,7 @@ body.ampliacao-vitrine-aberta {
     font-size: 0.66rem;
   }
 
+  /* RESPONSIVO | No celular, só um print aparece por vez. Por isso Desktop, Tablet e Mobile viram botões para escolher qual print ver. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
   .rotulo-vitrine-botao {
     min-height: 30px;
     padding: 0.4rem 0.62rem;
@@ -1395,6 +1504,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* RESPONSIVO | Em tela estreita, o nome pode ficar grande demais. Esse limite força uma quebra mais bonita e evita estouro lateral. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (max-width: 520px) {
   h1 {
     width: min(100%, 10.4ch);
@@ -1407,6 +1517,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* RESPONSIVO | Em celulares pequenos, tudo precisa caber com respiro. Esses ajustes reduzem espaços, fontes e caixas sem desmontar o layout. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (max-width: 430px) {
   .secao-limite {
     width: min(100% - 1.25rem, 100%);
@@ -1512,6 +1623,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* RESPONSIVO | Em celulares muito estreitos, a página usa o modo mais compacto para o menu, cabeçalho e textos continuarem cabendo. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
 @media screen and (max-width: 390px) {
   .menu-atalho {
     font-size: 0.66rem;
@@ -1559,6 +1671,7 @@ body.ampliacao-vitrine-aberta {
   }
 }
 
+/* ACESSIBILIDADE | Se o usuario configurou menos movimento no sistema, o site remove transições e efeitos de subir para evitar desconforto. A logica de acessibilidade respeita a preferencia de menos movimento para evitar desconforto sem quebrar o conteudo. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1570,6 +1683,11 @@ body.ampliacao-vitrine-aberta {
     transition-delay: 0ms !important;
   }
 
+  .reveal-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   .cabecalho-acao-linktree:hover,
   .cabecalho-acao-linktree:focus-visible,
   .cartao-projeto:hover,
