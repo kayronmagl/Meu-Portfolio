@@ -240,15 +240,24 @@ body.js-pronto .navegacao {
   gap: clamp(0.72rem, 1.5vw, 1rem);
 }
 
-/* CABEÇALHO | A logo mantém proporção quadrada, cresce pouco no desktop e não deforma mesmo mudando o tamanho da tela. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
-.logo-pessoal {
+/* CABEÇALHO | A moldura da logo corta apenas o respiro transparente do arquivo para a marca aparecer maior na tela sem alterar o PNG original. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
+.logo-moldura {
   display: block;
-  width: clamp(104px, 12vw, 132px);
-  height: auto;
+  width: clamp(136px, 13vw, 164px);
   aspect-ratio: 1;
-  object-fit: contain;
+  overflow: hidden;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* CABEÇALHO | A imagem cresce dentro da moldura para compensar a margem transparente do arquivo sem distorcer o desenho da marca. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
+.logo-pessoal {
+  display: block;
+  width: 142%;
+  height: 142%;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-14.8%, -14.8%);
 }
 
 /* CABEÇALHO | O h1 é o nome principal do portfólio. O tamanho responsivo deixa forte no desktop e ainda legível no celular. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
@@ -1217,8 +1226,8 @@ body.ampliacao-vitrine-aberta {
     max-width: 34rem;
   }
 
-  .logo-pessoal {
-    width: 120px;
+  .logo-moldura {
+    width: 142px;
   }
 
   .cabecalho-sub-titulo {
@@ -1277,8 +1286,8 @@ body.ampliacao-vitrine-aberta {
     font-size: 0.86rem;
   }
 
-  .logo-pessoal {
-    width: 128px;
+  .logo-moldura {
+    width: 152px;
   }
 
   .cabecalho-sub-titulo {
@@ -1393,8 +1402,8 @@ body.ampliacao-vitrine-aberta {
     opacity: 0.34;
   }
 
-  .logo-pessoal {
-    width: 108px;
+  .logo-moldura {
+    width: 132px;
   }
 
   .vitrine-projeto {
