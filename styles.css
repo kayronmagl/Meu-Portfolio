@@ -246,7 +246,6 @@ body.js-pronto .navegacao {
   width: clamp(136px, 13vw, 164px);
   aspect-ratio: 1;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* CABEÇALHO | A imagem ocupa toda a moldura porque o PNG ja foi centralizado e preparado para aparecer maior. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
