@@ -12,7 +12,7 @@ Aqui você vai me conhecer, entender o que uso, faço e quem eu realmente sou pr
 
 <div align="center">
 
-<a href="[LINK-DO-PORTFOLIO](https://kayronmagl.github.io/Meu-Portfolio/)">
+<a href="https://kayronmagl.github.io/Meu-Portfolio/">
   <img
     src="https://img.shields.io/badge/Acessar%20portfólio-0D1117?style=for-the-badge&logo=googlechrome&logoColor=828282"
     alt="Acessar portfólio"
