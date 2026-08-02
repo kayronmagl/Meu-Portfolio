@@ -617,9 +617,10 @@
     function calcularEspacoDoMenuFixo() {
       const menu = document.querySelector(".menu");
       const navegacao = document.querySelector(".navegacao");
-      const folgaExtra = window.matchMedia("(max-width: 767px)").matches
-        ? 4
-        : 5;
+      const folgaExtra = parseFloat(
+        getComputedStyle(document.documentElement)
+          .getPropertyValue("--folga-menu-fixo")
+      ) || 16;
 
       if (menu) {
         return menu.getBoundingClientRect().bottom + folgaExtra;
@@ -639,6 +640,17 @@
       return secao.querySelector(".sobre-titulo, .ferramentas-titulo, .projetos-titulo") || secao;
     }
 
+    // MENU | Alguns títulos entram com translateY pelo reveal-scroll. Esse cálculo remove esse deslocamento visual para a rolagem parar no mesmo espaço padrão depois da animação.
+    function obterDeslocamentoVerticalDoElemento(elemento) {
+      const transformacao = getComputedStyle(elemento).transform;
+
+      if (!transformacao || transformacao === "none") {
+        return 0;
+      }
+
+      return new DOMMatrixReadOnly(transformacao).m42;
+    }
+
     // MENU | Calcula exatamente onde a página deve parar. Ele soma a posição atual, encontra a seção e tira a altura do menu para o título não ficar escondido. A logica calcula posicao, link ativo e altura do menu para a rolagem parar no lugar certo e o destaque acompanhar a secao visivel.
     function calcularPosicaoDaSecao(secao) {
       const pontoDaSecao = escolherPontoDaSecaoParaRolar(secao);
@@ -647,6 +659,7 @@
         0,
         pontoDaSecao.getBoundingClientRect().top +
         window.scrollY -
+        obterDeslocamentoVerticalDoElemento(pontoDaSecao) -
         calcularEspacoDoMenuFixo()
       );
     }

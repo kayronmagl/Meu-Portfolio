@@ -21,6 +21,7 @@
   --acao-texto: #17191d;
   --espaco-secao: clamp(3.5rem, 7vw, 5rem);
   --deslocamento-nav: clamp(1rem, 2vw, 1.25rem);
+  --folga-menu-fixo: 16px;
 }
 
 /* ANIMAÇÃO | Os efeitos de entrada aparecem quando a seção chega perto da tela. Isso deixa a página mais viva sem usar animações pesadas. A logica da animacao deixa a entrada visual mais suave, mas usa opacidade e transform para ser leve no celular e no computador. */
@@ -326,8 +327,9 @@ h1 {
 }
 
 .sobre,
+.ferramentas,
 .projetos {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: calc(4rem + var(--folga-menu-fixo));
 }
 
 .sobre {
