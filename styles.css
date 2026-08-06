@@ -285,37 +285,9 @@ h1 {
   margin-top: 0.58rem;
 }
 
-/* CABEÇALHO | O link do Linktree repete o desenho dos botões secundários: cápsula escura, borda discreta, ícone e texto centralizados. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
+/* CABEÇALHO | O link do Linktree herda o visual de .botao-projeto e .botao-projeto-secundario. Aqui ficam apenas ajustes proprios do cabecalho, para o desenho do botao ser mantido em um so lugar. */
 .cabecalho-acao-linktree {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  min-width: 0;
   gap: 0.48rem;
-  padding: 0.72rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--vidro);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024));
-  border-color: rgba(255, 255, 255, 0.095);
-  color: rgba(243, 239, 230, 0.92);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
-}
-
-.cabecalho-acao-linktree:hover,
-.cabecalho-acao-linktree:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(216, 210, 200, 0.22);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.034));
 }
 
 .cabecalho-acao-icone {
@@ -327,9 +299,6 @@ h1 {
 
 .cabecalho-acao-texto {
   color: inherit;
-  font-size: 0.94rem;
-  font-weight: 700;
-  line-height: 1.1;
 }
 
 .sobre,
@@ -1309,10 +1278,6 @@ body.ampliacao-vitrine-aberta {
     margin-top: 0.66rem;
   }
 
-  .cabecalho-acao-linktree {
-    min-height: 44px;
-  }
-
   .sobre-caixa {
     max-width: 42rem;
     padding: 1.28rem;
@@ -1571,7 +1536,7 @@ body.ampliacao-vitrine-aberta {
     grid-template-columns: 1fr;
   }
 
-  .botao-projeto {
+  .botoes-projeto .botao-projeto {
     width: 100%;
   }
 }
@@ -1624,16 +1589,6 @@ body.ampliacao-vitrine-aberta {
 
   .cabecalho-acoes {
     width: auto;
-  }
-
-  .cabecalho-acao-linktree {
-    min-height: 42px;
-    padding: 0.68rem 0.92rem;
-  }
-
-  .cabecalho-acao-icone {
-    width: 1rem;
-    height: 1rem;
   }
 
   h1 {
@@ -1724,16 +1679,6 @@ body.ampliacao-vitrine-aberta {
     width: auto;
   }
 
-  .cabecalho-acao-linktree {
-    min-height: 40px;
-    padding: 0.64rem 0.86rem;
-  }
-
-  .cabecalho-acao-icone {
-    width: 0.96rem;
-    height: 0.96rem;
-  }
-
   .sobre-abertura {
     font-size: 0.98rem;
   }
@@ -1765,8 +1710,6 @@ body.ampliacao-vitrine-aberta {
     transform: none;
     transition: none;
   }
-  .cabecalho-acao-linktree:hover,
-  .cabecalho-acao-linktree:focus-visible,
   .cartao-projeto:hover,
   .botao-ampliar-vitrine:hover,
   .botao-ampliar-vitrine:focus-visible,
