@@ -285,52 +285,51 @@ h1 {
   margin-top: 0.58rem;
 }
 
-/* CABEÇALHO | O link do Linktree vira um botão redondo com efeito de vidro. O ícone fica centralizado para parecer um botão de ação principal. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
+/* CABEÇALHO | O link do Linktree repete o desenho dos botões secundários: cápsula escura, borda discreta, ícone e texto centralizados. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-acao-linktree {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  padding: 0;
+  min-height: 44px;
+  min-width: 0;
+  gap: 0.48rem;
+  padding: 0.72rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(216, 210, 200, 0.16);
+  border: 1px solid var(--vidro);
   background:
-    linear-gradient(180deg, rgba(216, 210, 200, 0.09), rgba(255, 255, 255, 0.018)),
-    rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  color: var(--acao);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024));
+  border-color: rgba(255, 255, 255, 0.095);
+  color: rgba(243, 239, 230, 0.92);
+  text-align: center;
   text-decoration: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 12px 28px rgba(0, 0, 0, 0.22);
+  white-space: nowrap;
   transition:
     transform 0.25s ease,
     background 0.25s ease,
     border-color 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
+    color 0.25s ease;
 }
 
-/* CABEÇALHO | No hover ou foco, o botão sobe levemente e muda a cor do ícone. Isso mostra que ele pode ser clicado. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
 .cabecalho-acao-linktree:hover,
 .cabecalho-acao-linktree:focus-visible {
   transform: translateY(-2px);
+  border-color: rgba(216, 210, 200, 0.22);
   background:
-    linear-gradient(180deg, rgba(216, 210, 200, 0.2), rgba(185, 178, 169, 0.08)),
-    rgba(255, 255, 255, 0.045);
-  border-color: rgba(216, 210, 200, 0.28);
-  color: var(--claro);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    0 16px 34px rgba(0, 0, 0, 0.28);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.034));
 }
 
 .cabecalho-acao-icone {
-  width: 27px;
-  height: 27px;
+  width: 1.08rem;
+  height: 1.08rem;
+  flex: 0 0 auto;
   display: block;
+}
+
+.cabecalho-acao-texto {
+  color: inherit;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .sobre,
@@ -1311,13 +1310,7 @@ body.ampliacao-vitrine-aberta {
   }
 
   .cabecalho-acao-linktree {
-    width: 50px;
-    height: 50px;
-  }
-
-  .cabecalho-acao-icone {
-    width: 26px;
-    height: 26px;
+    min-height: 44px;
   }
 
   .sobre-caixa {
@@ -1634,8 +1627,13 @@ body.ampliacao-vitrine-aberta {
   }
 
   .cabecalho-acao-linktree {
-    width: 48px;
-    height: 48px;
+    min-height: 42px;
+    padding: 0.68rem 0.92rem;
+  }
+
+  .cabecalho-acao-icone {
+    width: 1rem;
+    height: 1rem;
   }
 
   h1 {
@@ -1727,13 +1725,13 @@ body.ampliacao-vitrine-aberta {
   }
 
   .cabecalho-acao-linktree {
-    width: 46px;
-    height: 46px;
+    min-height: 40px;
+    padding: 0.64rem 0.86rem;
   }
 
   .cabecalho-acao-icone {
-    width: 24px;
-    height: 24px;
+    width: 0.96rem;
+    height: 0.96rem;
   }
 
   .sobre-abertura {
