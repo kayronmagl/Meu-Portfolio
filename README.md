@@ -40,7 +40,7 @@ Aqui você vai me conhecer, entender o que uso, faço e quem eu realmente sou pr
   />
 </a>
 
-<a href="mailto:[kayronsouza99@gmail.com](mailto:kayronsouza99@gmail.com)">
+<a href="mailto:kayronsouza99@gmail.com">
   <img
     src="https://img.shields.io/badge/Gmail-0D1117?style=for-the-badge&logo=gmail&logoColor=828282"
     alt="Gmail"
@@ -70,7 +70,7 @@ Aqui você vai me conhecer, entender o que uso, faço e quem eu realmente sou pr
 <div align="center">
 
 <img
-src="https://visitor-badge.laobi.icu/badge?page_id=kayronmagl.NOME-DO-REPOSITORIO&left_color=5C5C5C&right_color=828282&left_text=Visitantes"
+src="https://visitor-badge.laobi.icu/badge?page_id=kayronmagl.Portfolio-do-Kayron-Magalhaes&left_color=5C5C5C&right_color=828282&left_text=Visitantes"
 alt="Contador de visitantes"
 />
 

@@ -294,19 +294,23 @@ h1 {
   height: 50px;
   padding: 0;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(216, 210, 200, 0.16);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    linear-gradient(180deg, rgba(216, 210, 200, 0.09), rgba(255, 255, 255, 0.018)),
     rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  color: rgba(243, 239, 230, 0.92);
+  color: var(--acao);
   text-decoration: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 12px 28px rgba(0, 0, 0, 0.22);
   transition:
     transform 0.25s ease,
     background 0.25s ease,
     border-color 0.25s ease,
-    color 0.25s ease;
+    color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 /* CABEÇALHO | No hover ou foco, o botão sobe levemente e muda a cor do ícone. Isso mostra que ele pode ser clicado. A logica do cabecalho prioriza apresentacao, hierarquia e chamada principal para a primeira tela explicar quem e o portfolio. */
@@ -314,10 +318,13 @@ h1 {
 .cabecalho-acao-linktree:focus-visible {
   transform: translateY(-2px);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.028)),
-    rgba(255, 255, 255, 0.04);
-  border-color: var(--vidro-forte);
-  color: #7ce893;
+    linear-gradient(180deg, rgba(216, 210, 200, 0.2), rgba(185, 178, 169, 0.08)),
+    rgba(255, 255, 255, 0.045);
+  border-color: rgba(216, 210, 200, 0.28);
+  color: var(--claro);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 16px 34px rgba(0, 0, 0, 0.28);
 }
 
 .cabecalho-acao-icone {
@@ -792,7 +799,51 @@ h1 {
   width: 1rem;
   height: 1rem;
   display: block;
-  fill: currentColor;
+  position: relative;
+}
+
+.icone-ampliar-vitrine::after {
+  content: "";
+  position: absolute;
+  right: 0.06rem;
+  bottom: 0.12rem;
+  width: 0.42rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.icone-ampliar-vitrine-lente {
+  position: absolute;
+  top: 0.05rem;
+  left: 0.05rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 0.12rem solid currentColor;
+  border-radius: 50%;
+}
+
+.icone-ampliar-vitrine-lente::before,
+.icone-ampliar-vitrine-lente::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+
+.icone-ampliar-vitrine-lente::before {
+  width: 0.34rem;
+  height: 0.1rem;
+}
+
+.icone-ampliar-vitrine-lente::after {
+  width: 0.1rem;
+  height: 0.34rem;
 }
 
 /* VITRINE | Em PC, a lupa começa discreta para não poluir os prints. Quando o mouse chega no print, ela aparece melhor. A logica da vitrine adapta os prints ao espaco disponivel: no desktop mostra comparacao, no celular vira escolha ou carrossel para caber. */
@@ -1178,7 +1229,28 @@ body.ampliacao-vitrine-aberta {
   width: 1rem;
   height: 1rem;
   display: block;
-  fill: currentColor;
+  position: relative;
+}
+
+.icone-fechar-ampliacao::before,
+.icone-fechar-ampliacao::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: center;
+}
+
+.icone-fechar-ampliacao::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icone-fechar-ampliacao::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .particulas {
