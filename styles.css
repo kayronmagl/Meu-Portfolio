@@ -12,10 +12,10 @@
   --maisEscuro: #0d0f12;
   --claro: #f3efe6;
   --texto-suave: rgba(243, 239, 230, 0.76);
-  --vidro: rgba(255, 255, 255, 0.09);
-  --vidro-forte: rgba(255, 255, 255, 0.13);
-  --superficie: rgba(31, 35, 42, 0.88);
-  --superficie-secundaria: rgba(20, 23, 29, 0.92);
+  --vidro: rgba(255, 255, 255, 0.11);
+  --vidro-forte: rgba(255, 255, 255, 0.16);
+  --superficie: rgba(31, 35, 42, 0.92);
+  --superficie-secundaria: rgba(20, 23, 29, 0.95);
   --acao: #d8d2c8;
   --acao-secundaria: #b9b2a9;
   --acao-texto: #17191d;
@@ -76,6 +76,11 @@
 
 /* BASE | Aqui fica o comportamento geral da página. O fundo fica escuro, o texto fica claro e qualquer sobra horizontal é escondida para não criar barra lateral. A logica base controla largura, cor, respiro e ritmo para as secoes seguirem o mesmo padrao sem repetir regras em todo lugar. */
 body {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(7, 9, 13, 0.95), transparent 24rem),
+    radial-gradient(circle at 18% 12%, rgba(139, 133, 125, 0.1), transparent 30rem),
+    radial-gradient(circle at 86% 76%, rgba(88, 91, 97, 0.14), transparent 34rem),
+    linear-gradient(145deg, var(--maisEscuro) 0%, var(--escuro) 58%, #090b0e 100%);
   background-color: var(--escuro);
   color: var(--claro);
   line-height: 1.6;
@@ -119,11 +124,11 @@ body.js-pronto .navegacao {
   overflow: hidden;
   border-radius: 999px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
-    rgba(20, 23, 29, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(24px) saturate(120%);
-  -webkit-backdrop-filter: blur(24px) saturate(120%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.02)),
+    rgba(20, 23, 29, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.115);
+  backdrop-filter: blur(22px) saturate(115%);
+  -webkit-backdrop-filter: blur(22px) saturate(115%);
 }
 
 /* MENU | O ::before cria uma camada extra dentro do menu para fazer o brilho de vidro. O content vazio existe só para essa camada aparecer, sem texto. A logica do menu combina posicao fixa, estado ativo e espacamento para navegar sem cobrir titulos nem deixar o usuario perdido. */
@@ -211,8 +216,8 @@ body.js-pronto .navegacao {
   overflow: hidden;
   border-radius: 20px;
   border: 1px solid var(--vidro);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px) saturate(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
 }
 
 .sobre-caixa::before,
@@ -343,9 +348,9 @@ h1 {
   padding: clamp(1.3rem, 2.5vw, 1.85rem);
   border-color: rgba(255, 255, 255, 0.1);
   background:
-    radial-gradient(circle at 8% 0%, rgba(216, 210, 200, 0.075), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.014)),
-    rgba(25, 28, 34, 0.84);
+    radial-gradient(circle at 8% 0%, rgba(216, 210, 200, 0.07), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.018)),
+    rgba(25, 28, 34, 0.9);
 }
 
 /* SOBRE | Essa linha no final da caixa cria acabamento visual e ajuda a separar a biografia do fundo da página. A logica do Sobre separa resumo, texto longo e respiro para a leitura ficar clara sem virar um bloco pesado. */
@@ -460,8 +465,8 @@ h1 {
 .ferramentas-grupo {
   padding: clamp(1rem, 1.8vw, 1.18rem);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.014)),
-    rgba(25, 28, 34, 0.8);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.018)),
+    rgba(25, 28, 34, 0.87);
 }
 
 .ferramentas-grupo h3 {
@@ -571,9 +576,9 @@ h1 {
   display: flex;
   flex-direction: column;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.055), transparent 36%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.044), rgba(255, 255, 255, 0.012)),
-    rgba(25, 28, 34, 0.86);
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.058), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.016)),
+    rgba(25, 28, 34, 0.91);
   box-shadow:
     0 18px 42px rgba(0, 0, 0, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.035);
@@ -1019,8 +1024,8 @@ h1 {
 
 .botao-projeto-secundario {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024));
-  border-color: rgba(255, 255, 255, 0.095);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.032));
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(243, 239, 230, 0.92);
   cursor: pointer;
 }
@@ -1223,16 +1228,36 @@ body.ampliacao-vitrine-aberta {
 
 .particulas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
-  opacity: 0.55;
+  overflow: hidden;
+  opacity: 0.78;
   background:
-    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
-    var(--maisEscuro);
+    linear-gradient(180deg, rgba(7, 9, 13, 0.28), rgba(7, 9, 13, 0.56)),
+    url("img/ReferenciaDeFundo.jpg");
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+  filter: grayscale(100%) contrast(108%) brightness(64%);
+}
+
+.particulas::before,
+.particulas::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+}
+
+.particulas::before {
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(7, 9, 13, 0.9) 0 22%, transparent 48%),
+    linear-gradient(90deg, rgba(7, 9, 13, 0.3), transparent 31%, transparent 69%, rgba(7, 9, 13, 0.34));
+  opacity: 0.94;
+}
+
+.particulas::after {
+  display: none;
 }
 
 /* RESPONSIVO | Em tablet para cima existe mais largura disponível. Esses ajustes aumentam respiro e começam a dividir cards em colunas. A logica responsiva muda tamanho, colunas e espacamentos conforme a tela para leitura, toque e imagens continuarem confortaveis. */
@@ -1358,7 +1383,8 @@ body.ampliacao-vitrine-aberta {
   }
 
   .menu {
-    width: min(calc(100% - 0.8rem), 27rem);
+    width: 100%;
+    max-width: 27rem;
     gap: 0.12rem;
     padding: 0.18rem;
     border-radius: 18px;
@@ -1565,7 +1591,8 @@ body.ampliacao-vitrine-aberta {
   }
 
   .menu {
-    width: min(calc(100% - 0.55rem), 23.5rem);
+    width: 100%;
+    max-width: 23.5rem;
     gap: 0.08rem;
     padding: 0.14rem;
     border-radius: 16px;
