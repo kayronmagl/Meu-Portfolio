@@ -77,7 +77,7 @@
           </p>
           <div class="sobre-conteudo">
             <p class="sobre-corpo">
-              Também desenvolvo conhecimentos em inteligência artificial, automação, desenvolvimento web, cloud, dados,
+              Também foco em desenvolver ainda mais conhecimentos em inteligência artificial, automação, desenvolvimento web, cloud, dados,
               UX e segurança da informação.
             </p>
 
@@ -827,6 +827,61 @@
     const botoesDetalhesProjeto = Array.from(
       document.querySelectorAll("[data-alternar-detalhes-projeto]")
     );
+    const temposDetalhesProjeto = new WeakMap();
+    const duracaoAnimacaoDetalhesProjeto = 440;
+
+    function atualizarAlturaDetalhesProjeto(painel) {
+      painel.style.setProperty(
+        "--altura-detalhes-projeto",
+        `${painel.scrollHeight}px`
+      );
+    }
+
+    function mostrarDetalhesProjeto(painel) {
+      window.clearTimeout(temposDetalhesProjeto.get(painel));
+      painel.hidden = false;
+      atualizarAlturaDetalhesProjeto(painel);
+
+      if (prefereMovimentoReduzido.matches) {
+        painel.classList.add("projeto-detalhes--visivel");
+        return;
+      }
+
+      window.requestAnimationFrame(() => {
+        atualizarAlturaDetalhesProjeto(painel);
+        painel.classList.add("projeto-detalhes--visivel");
+      });
+    }
+
+    function esconderDetalhesProjeto(painel) {
+      window.clearTimeout(temposDetalhesProjeto.get(painel));
+
+      if (painel.hidden) {
+        return;
+      }
+
+      atualizarAlturaDetalhesProjeto(painel);
+
+      if (prefereMovimentoReduzido.matches) {
+        painel.classList.remove("projeto-detalhes--visivel");
+        painel.hidden = true;
+        painel.style.removeProperty("--altura-detalhes-projeto");
+        return;
+      }
+
+      window.requestAnimationFrame(() => {
+        painel.classList.remove("projeto-detalhes--visivel");
+
+        const tempoDetalhesProjeto = window.setTimeout(() => {
+          if (!painel.classList.contains("projeto-detalhes--visivel")) {
+            painel.hidden = true;
+            painel.style.removeProperty("--altura-detalhes-projeto");
+          }
+        }, duracaoAnimacaoDetalhesProjeto);
+
+        temposDetalhesProjeto.set(painel, tempoDetalhesProjeto);
+      });
+    }
 
     // CARD | Ao abrir detalhes, o painel aparece, o botão vira "Ocultar detalhes" e o card recebe visual de expandido. Ao fechar, tudo volta ao estado normal. A logica controla abertura e fechamento dos detalhes para manter um card expandido por vez e evitar textos grandes ocupando a tela toda.
     function definirEstadoDetalhesProjeto(botao, expandido) {
@@ -840,8 +895,14 @@
 
       botao.setAttribute("aria-expanded", String(expandido));
       botao.textContent = expandido ? "Ocultar detalhes" : "Ver detalhes";
-      painel.hidden = !expandido;
       cartao.classList.toggle("cartao-projeto--expandido", expandido);
+
+      if (expandido) {
+        mostrarDetalhesProjeto(painel);
+        return;
+      }
+
+      esconderDetalhesProjeto(painel);
     }
 
     // CARD | Quando um projeto abre detalhes, os outros fecham. Isso evita vários textos grandes abertos ao mesmo tempo na seção de projetos. A logica controla abertura e fechamento dos detalhes para manter um card expandido por vez e evitar textos grandes ocupando a tela toda.
@@ -867,6 +928,12 @@
         fecharOutrosDetalhesProjeto(botao);
         definirEstadoDetalhesProjeto(botao, true);
       });
+    });
+
+    window.addEventListener("resize", () => {
+      document
+        .querySelectorAll(".projeto-detalhes--visivel")
+        .forEach(atualizarAlturaDetalhesProjeto);
     });
 
     const botoesAmpliarVitrine = Array.from(

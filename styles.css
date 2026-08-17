@@ -1115,6 +1115,21 @@ h1 {
   border-top: 1px solid rgba(243, 239, 230, 0.07);
   display: grid;
   gap: 0.9rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-6px);
+  transition:
+    max-height 360ms ease,
+    opacity 260ms ease,
+    transform 360ms ease;
+  will-change: max-height, opacity, transform;
+}
+
+.projeto-detalhes--visivel {
+  max-height: var(--altura-detalhes-projeto, 1200px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projeto-detalhes[hidden] {
@@ -1812,6 +1827,14 @@ body.ampliacao-vitrine-aberta {
     transform: none;
     transition: none;
   }
+
+  .projeto-detalhes {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .cartao-projeto:hover,
   .botao-ampliar-vitrine:hover,
   .botao-ampliar-vitrine:focus-visible,
