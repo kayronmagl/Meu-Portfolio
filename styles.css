@@ -879,9 +879,10 @@ h1 {
     transform: translateY(0);
   }
 
-  .botao-ampliar-vitrine:hover,
-  .botao-ampliar-vitrine:focus-visible {
+  .quadro-vitrine:hover .botao-ampliar-vitrine:hover,
+  .quadro-vitrine:focus-within .botao-ampliar-vitrine:focus-visible {
     opacity: 1;
+    transform: translateY(-1px) scale(1.02);
   }
 }
 
@@ -1293,15 +1294,15 @@ body.ampliacao-vitrine-aberta {
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  opacity: 0.68;
+  opacity: 0.46;
   background:
-    linear-gradient(180deg, rgba(7, 7, 7, 0.3), rgba(7, 7, 7, 0.58)),
+    linear-gradient(180deg, rgba(7, 7, 7, 0.42), rgba(7, 7, 7, 0.72)),
     url("img/Imagens%20%26%20Logos/ReferenciaDeFundo.jpg");
   background-position: center;
   background-size: cover;
   pointer-events: none;
-  filter: grayscale(100%) contrast(106%) brightness(58%) blur(2px);
-  transform: scale(1.03);
+  filter: grayscale(100%) brightness(48%) blur(1px);
+  transform: scale(1.02);
   transform-origin: center;
 }
 
@@ -1315,9 +1316,9 @@ body.ampliacao-vitrine-aberta {
 
 .particulas::before {
   background:
-    radial-gradient(ellipse at 50% 48%, rgba(7, 7, 7, 0.92) 0 24%, transparent 50%),
-    linear-gradient(90deg, rgba(7, 7, 7, 0.38), transparent 31%, transparent 69%, rgba(7, 7, 7, 0.4));
-  opacity: 0.94;
+    radial-gradient(ellipse at 50% 48%, rgba(7, 7, 7, 0.9) 0 24%, transparent 52%),
+    linear-gradient(90deg, rgba(7, 7, 7, 0.42), transparent 31%, transparent 69%, rgba(7, 7, 7, 0.44));
+  opacity: 0.96;
 }
 
 .particulas::after {

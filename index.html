@@ -589,6 +589,9 @@
     let idSecaoClicada = null;
     let menuTravadoAte = 0;
     const elementosReveal = Array.from(document.querySelectorAll(".reveal-scroll"));
+    const elementosRevealProjetos = Array.from(
+      document.querySelectorAll(".projetos-caixa .cartao-projeto-reveal")
+    );
 
     // ANIMAÇÃO | Os blocos com reveal-scroll começam escondidos. Quando entram na tela, o JS coloca a classe esta-visivel para eles aparecerem suavemente. A logica observa quando o bloco entra na tela e so entao adiciona a classe visivel, evitando animar tudo de uma vez.
     function iniciarRevealScroll() {
@@ -603,9 +606,40 @@
         return;
       }
 
+      const indicesProjetosProntos = new Set();
+      let proximoProjetoParaRevelar = 0;
+
+      function revelarProjetosEmOrdem(observadorReveal) {
+        let ordemDoLote = 0;
+
+        while (
+          proximoProjetoParaRevelar < elementosRevealProjetos.length &&
+          indicesProjetosProntos.has(proximoProjetoParaRevelar)
+        ) {
+          const elemento = elementosRevealProjetos[proximoProjetoParaRevelar];
+          const atraso = ordemDoLote * 130;
+
+          window.setTimeout(() => {
+            elemento.classList.add("esta-visivel");
+            observadorReveal.unobserve(elemento);
+          }, atraso);
+
+          proximoProjetoParaRevelar += 1;
+          ordemDoLote += 1;
+        }
+      }
+
       const observadorReveal = new IntersectionObserver((entradas) => {
         entradas.forEach((entrada) => {
           if (entrada.isIntersecting) {
+            const indiceProjeto = elementosRevealProjetos.indexOf(entrada.target);
+
+            if (indiceProjeto !== -1) {
+              indicesProjetosProntos.add(indiceProjeto);
+              revelarProjetosEmOrdem(observadorReveal);
+              return;
+            }
+
             entrada.target.classList.add("esta-visivel");
             observadorReveal.unobserve(entrada.target);
           }
