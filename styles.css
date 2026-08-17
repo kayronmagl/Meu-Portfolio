@@ -1295,9 +1295,7 @@ body.ampliacao-vitrine-aberta {
   z-index: -1;
   overflow: hidden;
   opacity: 0.46;
-  background:
-    linear-gradient(180deg, rgba(7, 7, 7, 0.42), rgba(7, 7, 7, 0.72)),
-    url("img/Imagens%20%26%20Logos/ReferenciaDeFundo.jpg");
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0.42), rgba(7, 7, 7, 0.72));
   background-position: center;
   background-size: cover;
   pointer-events: none;
